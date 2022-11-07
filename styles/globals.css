@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "candy-inc";
+    src: url("../public/assets/FranxurterTotallyMedium.ttf");
+}
 
 @layer base{
     *{
@@ -15,7 +19,7 @@
 
 @layer components {
     .container {
-        @apply max-w-[1500px] min-h-screen m-auto flex text-white
+        @apply max-w-[1500px] min-h-screen m-auto text-white
     }
 }
 

@@ -14,20 +14,20 @@ export const authOptions = {
     //Configure prisma adapter
     adapter : PrismaAdapter(prisma),
     //Configure nextauth secret:
-    secret : process.env.NEXTAUTH_SECRET,
+    secret : process.env.NEXTAUTH_SECRET ,
+    session: { strategy: "jwt" as const }, //this is important to add while you use getToken in middleware
     //Configure sign in and sign out page:
     pages : {
-        signIn : "/",
-        signOuth : "/"
+        signIn : "/auth",
+        signOut : "/auth"
     }, 
-    //Configure session type
-    session : {
-        strategy : "jwt"
-    } ,
     //Configures callbacks 
     callbacks : {
-        async session ({session,token,user}){
+        async session ({session,token,user}:any){
             return session
+        },
+        async jwt({token, account}:any){
+            return token
         }
     },
     //Cofigure debug

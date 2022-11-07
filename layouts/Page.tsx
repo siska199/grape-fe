@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from "next/head"
+import {useRouter} from "next/router"
+import Navbar from '../components/Navbar';
 
 type Props = {
     children : React.ReactNode;
@@ -7,6 +9,8 @@ type Props = {
 }
 
 const Page : React.FC<Props> = ({children, title}) => {
+  const router = useRouter()
+  const currentPath = router.pathname
   return (
     <div>
         <Head>
@@ -14,7 +18,12 @@ const Page : React.FC<Props> = ({children, title}) => {
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             <link rel="icon" href="/favicon.ico"/>
         </Head>
-        <article className='container'>
+        {
+          currentPath !=="/auth"?(
+            <Navbar/>
+          ):null
+        }
+        <article className='container flex'>
             {children}
         </article>
     </div>
