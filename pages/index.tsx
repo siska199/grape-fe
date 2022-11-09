@@ -10,14 +10,15 @@ const Home: NextPage = () => {
   const handleCreateResume = ()=>{
     router.push("/form-resume")
   }
-  const url = "https://wallpaperaccess.com/full/866354.jpg"
+
     return (
     <Page title={"home | grape"}>
       <section className='border-l border-r flex flex-col flex-[0.6] mx-auto '>
-        <img src={url} className="w-full h-[12rem] object-cover" alt="" />
+        <img src={"/assets/thumbnail.webp"} className="w-full h-[12rem] object-cover" alt="" />
         <div className='m-4 -mt-6 flex gap-8 items-center'>
           <img src={session?.user?.image as string} className="rounded-full"/>
           <h1 className='font-bold text-[1.5rem]'>{session?.user?.name}</h1>
+          <p>{session?.user?.username}</p>
         </div>
 
         <div className='mx-auto mt-4 w-full px-4'>

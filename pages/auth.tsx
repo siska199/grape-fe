@@ -5,7 +5,7 @@ import {FcGoogle} from "react-icons/fc"
 
 type Props = {}
 
-const auth : NextPage = (props: Props) => {
+const Auth : NextPage = (props: Props) => {
     const {data:session} = useSession()
     console.log("data: ", session)
   return (
@@ -28,5 +28,5 @@ const auth : NextPage = (props: Props) => {
   )
 }
 
-export default auth
+export default Auth
 

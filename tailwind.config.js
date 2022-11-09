@@ -10,7 +10,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        candy: ["candy-inc"],
       },
       borderWidth: {
         DEFAULT: "0.005rem",

@@ -1,0 +1,4 @@
+reference design:
+1. https://dribbble.com/shots/16855988-Freelancer-portfolio-Untitled-UI (layout)
+2. https://dribbble.com/shots/19561238-Profile-Component (form)
+https://dribbble.com/shots/19337773-User-profile-Untitled-UI 
