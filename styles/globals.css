@@ -14,6 +14,12 @@
 }
 
 @layer components {
+    .container-dashed{
+        @apply flex flex-col gap-2 border p-4 border-dashed
+    }
+    .close-button{
+        @apply text-[1.5rem] absolute -top-2 -right-2 cursor-pointer
+    }
     .container {
         @apply max-w-[1500px] min-h-screen m-auto text-white
     }
@@ -26,5 +32,18 @@
 }
 
 @layer utilities{
-
+    ::-webkit-scrollbar{
+        @apply w-2
+    }
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px #a5acb8;
+        border-radius: 10px;
+        background:white;
+    }
+    ::-webkit-scrollbar-thumb {
+        @apply rounded-lg bg-cd400 
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-cd600
+    }
 }

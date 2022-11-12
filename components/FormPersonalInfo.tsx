@@ -17,18 +17,16 @@ const FormPersonalInfo = (props : Props) => {
   }
 
   return (
-    <>
-        <div className='w-full flex flex-wrap gap-4'>
-            <Input name={"fullname"} value={""} />
-            <UploadPhoto name={"Profile Picture Resume"} value={""} />
-            <div className='grid gap-5 grid-cols-2 w-full'>
-                <Input name={"phone"} value={""} />
-                <Input name={"email"} value={""} />
-            </div>
-            <TextArea name={"about me"} value={""} />
-            <ListSocialMedia/>
+    <div className='w-full flex flex-wrap gap-4'>
+        <Input name={"fullname"} value={""} />
+        <UploadPhoto name={"Profile Picture Resume"} value={""} />
+        <div className='grid gap-5 grid-cols-2 w-full'>
+            <Input name={"phone"} value={""} />
+            <Input name={"email"} value={""} />
         </div>
-    </>
+        <TextArea name={"about me"} value={""} />
+        <ListSocialMedia/>
+    </div>
   )
 }
 

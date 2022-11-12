@@ -1,8 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit"
 
 export const initialState = {
-    modalAddSocialMedia : false,
-    currentStepFormResume : 2,
+    modalAddEducation : false,
+    currentStepFormResume : 3,
     stepsFormResume : [
         {
             name : "Personal Info",
@@ -43,10 +43,10 @@ const resumeSlice = createSlice({
         handleOnChangeForm : (state, action)=>{
 
         },
-        handleAddModalSocialMedia : (state, action)=>{
-            state.modalAddSocialMedia = action.payload
+        handleModalAddEducation : (state, action)=>{
+            state.modalAddEducation = action.payload
         }
     }
 })
-export const {handleOnChangeForm, handleAddModalSocialMedia} = resumeSlice.actions
+export const {handleOnChangeForm, handleModalAddEducation} = resumeSlice.actions
 export default resumeSlice.reducer

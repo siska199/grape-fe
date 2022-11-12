@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from "next/head"
 import {useRouter} from "next/router"
-import Navbar from '../components/Navbar';
+import Navbar from '../atoms/Navbar';
 
 type Props = {
     children : React.ReactNode;

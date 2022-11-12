@@ -12,7 +12,7 @@ const FormResume = (props: Props) => {
 
   return (
     <Page title={"form resume | grape"}>
-      <div className='flex p-4 flex-[1] overflow-hidden md:flex-[0.6] flex-col items-center mx-auto'>
+      <div className='flex p-4 flex-[1] overflow-hidden md:flex-[0.7] xl:flex-[0.6] flex-col items-center mx-auto'>
         <StepsFormResume/>
         {currentStep==1&&<FormPersonalInfo/>}
         {currentStep==2&&<FormEducationsAndSkills/>}

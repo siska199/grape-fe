@@ -2,7 +2,7 @@ import React from 'react'
 import {useSession} from "next-auth/react"
 import {AiOutlineLogout} from "react-icons/ai"
 import {signOut} from "next-auth/react"
-import StepsFormResume from './StepsFormResume'
+import StepsFormResume from '../components/StepsFormResume'
 type Props = {}
 
 const Navbar = (props: Props) => {

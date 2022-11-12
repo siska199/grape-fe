@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {BsPlusSquare} from "react-icons/bs"
 import {AiOutlineEdit} from "react-icons/ai"
-import AddSocialMedia from './AddSocialMedia'
+import AddSocialMedia from '../atoms/AddSocialMedia'
 type Props = {}
 
 const ListSocialMedia = (props: Props) => {

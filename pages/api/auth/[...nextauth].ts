@@ -23,7 +23,7 @@ export const authOptions = {
     }, 
     //Configures callbacks 
     callbacks : {
-        async session ({session,token,user}:any){
+        async session ({session,token,user} : any){
             return session
         },
         async jwt({token, account}:any){
