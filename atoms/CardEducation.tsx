@@ -11,7 +11,7 @@ type Props = {
 
 const CardEducation = ({data}: Props) => {
   return (
-    <section className='rounded-sm text-cd300 p-5 font-thin text-sm w-full bg-cyan-900 '>
+    <section className='card bg-cd800 '>
         <header className='flex gap-2'>
             <img className='h-[3rem] w-[3rem]' src={data.logo} alt="Logo Institution"/>
             <div>
@@ -22,7 +22,7 @@ const CardEducation = ({data}: Props) => {
         <ul className='mt-2'>
             {
                 data.activities.map((data=>(
-                    <li>&#127826; {data}</li>
+                    <li className='border border-dashed p-1 mb-2'>&#127826; {data}</li>
                 )))
             }
         </ul>

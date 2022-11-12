@@ -3,4 +3,5 @@ export interface InputProps{
     value : string;
     onChange? : ()=>void;
     customeStyle? : string;
+    type? : string;
 }

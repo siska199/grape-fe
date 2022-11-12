@@ -14,14 +14,23 @@
 }
 
 @layer components {
+    .container {
+        @apply max-w-[1500px] min-h-screen m-auto text-white
+    }
     .container-dashed{
         @apply flex flex-col gap-2 border p-4 border-dashed
     }
+    .container-card{
+        @apply gap-[1.5rem] grid grid-cols-1 md:grid-cols-2 
+    }
+    .container-form{
+        @apply w-full flex flex-wrap flex-col gap-4
+    }
+    .card{
+        @apply rounded-sm text-cd300 p-5 font-thin text-sm w-full
+    }
     .close-button{
         @apply text-[1.5rem] absolute -top-2 -right-2 cursor-pointer
-    }
-    .container {
-        @apply max-w-[1500px] min-h-screen m-auto text-white
     }
     .input{
         @apply px-2 py-2 outline-none bg-cd800 p-1 text-sm

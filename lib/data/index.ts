@@ -32,7 +32,49 @@ export const educations = [
         "The best graduate majoring in physics, the 109th graduate"
       ]
     }
-  ]
+]
+
+export const experiances = [
+  {
+    posisi : "Frontend Engineer",
+    startDate : Date.now(),
+    endDate : Date.now(),
+    currentPosition : true,
+    institution : "SIGMATECT",
+    logo : "https://i1.wp.com/buk.um.ac.id/wp-content/uploads/2016/02/cropped-avatar.png",
+    activities : [
+      "Aplikasi OCEAN --> Project Penutupan POS, Project History Penutupan Dealer, Project Penambahan Gudang",
+      "Aplikasi OCEAN --> Project Penutupan POS, Project History Penutupan Dealer, Project Penambahan Gudang",
+      "Aplikasi OCEAN --> Project Penutupan POS, Project History Penutupan Dealer, Project Penambahan Gudang"
+    ]
+  },
+  {
+    posisi : "Frontend Engineer",
+    startDate : Date.now(),
+    endDate : Date.now(),
+    currentPosition : true,
+    institution : "SIGMATECT",
+    logo : "https://i1.wp.com/buk.um.ac.id/wp-content/uploads/2016/02/cropped-avatar.png",
+    activities : [
+      "Aplikasi OCEAN --> Project Penutupan POS, Project History Penutupan Dealer, Project Penambahan Gudang",
+      "Aplikasi OCEAN --> Project Penutupan POS, Project History Penutupan Dealer, Project Penambahan Gudang",
+      "Aplikasi OCEAN --> Project Penutupan POS, Project History Penutupan Dealer, Project Penambahan Gudang"
+    ]
+  },
+  {
+    posisi : "Frontend Engineer",
+    startDate : Date.now(),
+    endDate : Date.now(),
+    currentPosition : true,
+    institution : "SIGMATECT",
+    logo : "https://i1.wp.com/buk.um.ac.id/wp-content/uploads/2016/02/cropped-avatar.png",
+    activities : [
+      "Aplikasi OCEAN --> Project Penutupan POS, Project History Penutupan Dealer, Project Penambahan Gudang",
+      "Aplikasi OCEAN --> Project Penutupan POS, Project History Penutupan Dealer, Project Penambahan Gudang",
+      "Aplikasi OCEAN --> Project Penutupan POS, Project History Penutupan Dealer, Project Penambahan Gudang"
+    ]
+  }
+]
 
 export const skills = [
   {
