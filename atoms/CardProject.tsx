@@ -17,8 +17,8 @@ const CardProject = ({data}: Props) => {
     const hrefStyle = "border hover:bg-cd700 py-1 rounded-full font-bold text-center w-[7rem]"
   return (
     <section className='card bg-cd800 gap-2 flex flex-col justify-center items-center'>
-        <img src={data.image} className={"w-[20rem] border-[2px] border-cd700 border-dashed"}/>
         <h1 className='font-bold text-lg'>{data.title}</h1>
+        <img src={data.image} className={"w-[20rem] border-[2px] border-cd700 border-dashed"}/>
         <p className='text-justify'>{data.about}</p>
         <div className='flex  w-full gap-2 justify-start'>
             <a href="" className={hrefStyle}>Repository</a>
