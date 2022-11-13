@@ -14,7 +14,6 @@ const AddEducation = (props: Props) => {
 
   return (
     <Modal label="Add Education" onClose={()=>dispatch(handleModalAddEducation(false))}>
-
             <>
                 <Input name={"institution"} value={""} />
                 <Input name={"major"} value={""} />

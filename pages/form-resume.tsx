@@ -6,6 +6,7 @@ import Page from '../layouts/Page'
 import { useAppSelector } from '../lib/redux/store'
 import Button from '../atoms/Button'
 import FormExperiance from '../components/FormExperiance'
+import FormProjects from '../components/FormProjects'
 type Props = {}
 
 const FormResume = (props: Props) => {
@@ -18,6 +19,7 @@ const FormResume = (props: Props) => {
         {currentStep==1&&<FormPersonalInfo/>}
         {currentStep==2&&<FormEducationsAndSkills/>}
         {currentStep==3&&<FormExperiance/>}
+        {currentStep==4&&<FormProjects/>}
         <div className='ml-auto'>
             {
               currentStep != 1 && 

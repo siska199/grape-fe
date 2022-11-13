@@ -3,19 +3,20 @@ import {createSlice} from "@reduxjs/toolkit"
 export const initialState = {
     modalAddEducation : false,
     modalAddExperiance : false,
-    currentStepFormResume : 2,
+    modalAddProject : false,
+    currentStepFormResume : 4,
     stepsFormResume : [
         {
             name : "Personal Info",
-            done : false,
+            done : true,
             step: 1
         }, {
             name : "Educations and Skills",
-            done : false,
+            done : true,
             step: 2
         },{
             name : "Experiances",
-            done : false,
+            done : true,
             step: 3
         },{
             name : "Projects",
@@ -46,8 +47,11 @@ const resumeSlice = createSlice({
         },
         handleModalAddExperiance : (state, action)=>{
             state.modalAddExperiance = action.payload
+        },
+        handleModalAddProject : (state, action)=>{
+            state.modalAddProject = action.payload
         }
     }
 })
-export const { handleModalAddEducation, handleModalAddExperiance} = resumeSlice.actions
+export const { handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
 export default resumeSlice.reducer

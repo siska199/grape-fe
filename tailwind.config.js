@@ -9,8 +9,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-      },
+      fontFamily: {},
       borderWidth: {
         DEFAULT: "0.005rem",
       },
