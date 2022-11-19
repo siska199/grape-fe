@@ -23,9 +23,9 @@ const Page : React.FC<Props> = ({children, title}) => {
             <Navbar/>
           ):null
         }
-        <article className='container flex overflow-x-hidden'>
+        <div className='container flex overflow-x-hidden'>
             {children}
-        </article>
+        </div>
     </div>
   )
 }

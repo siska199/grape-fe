@@ -1,3 +1,36 @@
+import {IoIosNotificationsOutline} from "react-icons/io"
+import {IoSettingsOutline} from "react-icons/io5"
+import {CiSearch} from "react-icons/ci"
+
+interface DataElm{
+  src? : string;
+}
+
+interface Menu{
+  name : string,
+  elm : (dataElm : DataElm)=>React.ReactElement
+}
+
+
+export const menus : Menu[] = [
+  {
+    name : "search",
+    elm : (data)=><CiSearch />,
+  },
+  {
+    name : "setting",
+    elm : (data)=><IoSettingsOutline />
+  },
+  {
+    name : "notification",
+    elm : (data)=><IoIosNotificationsOutline  />
+  },
+  {
+    name : "profile",
+    elm : (data)=> <img src={data.src}   className="w-[2rem] h-[2rem] rounded-full" alt="" />
+  },
+]
+
 export const educations = [
     {
       institution : "Universitas Negeri Malang (2017-2021)",
@@ -126,3 +159,5 @@ export const skillLevel = [
   "Intermediet",
   "Advance"
 ]
+
+
