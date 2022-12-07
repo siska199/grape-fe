@@ -23,8 +23,8 @@ const ListSocialMedia = (props: Props) => {
         <label htmlFor="" className='label flex gap-3 items-center'>LIST SOCIAL MEDIA <BsPlusSquare onClick={()=>setOnChange("add")} className='cursor-pointer'/> </label>
         <ul>
             {
-                socialMedias.map((data)=>(
-                    <li className='font-thin '>
+                socialMedias.map((data,i)=>(
+                    <li className='font-thin ' key={i}>
                         <a className='flex gap-2 items-center' href={data.link} target={"_black"}> {data.name} <AiOutlineEdit/></a>
                     </li>
                 ))

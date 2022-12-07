@@ -6,10 +6,10 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./layouts/**/*.{js,ts,jsx,tsx}",
     "./atoms/**/*.{js,ts,jsx,tsx}",
+    "./lib/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      fontFamily: {},
       borderWidth: {
         DEFAULT: "0.005rem",
       },

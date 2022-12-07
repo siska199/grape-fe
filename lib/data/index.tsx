@@ -27,7 +27,7 @@ export const menus : Menu[] = [
   },
   {
     name : "profile",
-    elm : (data)=> <img src={data.src}   className="w-[2rem] h-[2rem] rounded-full" alt="" />
+    elm : (data)=> <img src={data.src}   className="w-[1.7rem] md:w-[2rem] aspect-square rounded-full" alt="" />
   },
 ]
 

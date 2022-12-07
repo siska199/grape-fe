@@ -17,7 +17,7 @@ export async function middleware(req:NextRequest){
         const {pathname:currentPage} = req.nextUrl
         const authPages = [
             "/",
-            "/upload-video"
+            "/form-resume"
         ]
         const isAuthPage = authPages.includes(currentPage)
         if(isAuthPage){

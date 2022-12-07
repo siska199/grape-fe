@@ -14,8 +14,8 @@ const ListActivity = ({}: Props) => {
             <label htmlFor="" className='label flex items-center gap-2'>ACTIVITIES <BsPlusSquare onClick={()=>setAddActivity(true)} className="cursor-pointer"/></label>
             <ul>
                 {
-                    activities.map((activity)=>(
-                        <li>&#127826; {activity}</li>
+                    activities.map((activity,i)=>(
+                        <li key={i}>&#127826; {activity}</li>
                     ))
                 }
             </ul>

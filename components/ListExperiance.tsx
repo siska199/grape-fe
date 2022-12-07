@@ -17,7 +17,7 @@ const ListExperiance = (props: Props) => {
         <div className='container-card'>
             {
                 experiances.map((experiance,i)=>(
-                    <CardExperiance data={experiance}/>
+                    <CardExperiance key={i} data={experiance}/>
                 ))
             }
         </div>

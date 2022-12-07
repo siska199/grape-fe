@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../atoms/Button'
 import Input from '../atoms/Input'
 import TextArea from '../atoms/TextArea'
 import UploadPhoto from '../atoms/UploadPhoto'

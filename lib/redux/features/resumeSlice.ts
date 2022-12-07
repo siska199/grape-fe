@@ -1,22 +1,22 @@
-import {createSlice} from "@reduxjs/toolkit"
+import {createSlice, current, PayloadAction} from "@reduxjs/toolkit"
 
 export const initialState = {
     modalAddEducation : false,
     modalAddExperiance : false,
     modalAddProject : false,
-    currentStepFormResume : 4,
+    currentStepFormResume : 1,
     stepsFormResume : [
         {
             name : "Personal Info",
-            done : true,
+            done : false,
             step: 1
         }, {
             name : "Educations and Skills",
-            done : true,
+            done : false,
             step: 2
         },{
             name : "Experiances",
-            done : true,
+            done : false,
             step: 3
         },{
             name : "Projects",
@@ -38,20 +38,44 @@ export const initialState = {
     }
 }
 
+
+
 const resumeSlice = createSlice({
     name:"resume",
     initialState,
     reducers : {
-        handleModalAddEducation : (state, action)=>{
+        /**
+         * law : if user click next so we will hit api save with status undone if  currentStepFormResume < 5
+         */
+        handleNextStep : (state,action:PayloadAction<undefined>)=>{
+            state.stepsFormResume = current(state).stepsFormResume.map(data=>{
+                if(current(state).currentStepFormResume==data.step){
+                    return {
+                        ...data,
+                        done:true
+                    }
+                }
+                return data
+
+            })
+            state.currentStepFormResume = current(state).currentStepFormResume +1
+        },
+        /**
+         * Law : if user beack currentStepForResume will minus 1 
+         */
+        handleBackStep : (state,action:PayloadAction<undefined>)=>{
+            state.currentStepFormResume = current(state).currentStepFormResume -1
+        },
+        handleModalAddEducation : (state, action:PayloadAction<boolean>)=>{
             state.modalAddEducation = action.payload
         },
-        handleModalAddExperiance : (state, action)=>{
+        handleModalAddExperiance : (state, action:PayloadAction<boolean>)=>{
             state.modalAddExperiance = action.payload
         },
-        handleModalAddProject : (state, action)=>{
+        handleModalAddProject : (state, action:PayloadAction<boolean>)=>{
             state.modalAddProject = action.payload
         }
     }
 })
-export const { handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
+export const {handleBackStep,handleNextStep, handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
 export default resumeSlice.reducer
