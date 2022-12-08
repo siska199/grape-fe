@@ -1,6 +1,6 @@
 import React from 'react'
-import ListEducation from './ListEducation'
-import ListSkill from './ListSkill'
+import ListEducation from '../ListEducation'
+import ListSkill from '../ListSkill'
 
 type Props = {}
 

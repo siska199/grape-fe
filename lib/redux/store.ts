@@ -8,6 +8,9 @@ const store = configureStore({
     }
 })
 
+console.log("store state: ", typeof store.getState)
+console.log("store dispatch: ", typeof store.dispatch)
+
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
 

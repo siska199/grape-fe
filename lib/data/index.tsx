@@ -11,7 +11,6 @@ interface Menu{
   elm : (dataElm : DataElm)=>React.ReactElement
 }
 
-
 export const menus : Menu[] = [
   {
     name : "search",
@@ -159,5 +158,6 @@ export const skillLevel = [
   "Intermediet",
   "Advance"
 ]
+
 
 

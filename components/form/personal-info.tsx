@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Input from '../atoms/Input'
 import TextArea from '../atoms/TextArea'
 import UploadPhoto from '../atoms/UploadPhoto'
@@ -9,6 +9,7 @@ type Props = {}
 
 const FormPersonalInfo = (props : Props) => {
   const form = useAppSelector(state=>state.resume.formPersonalInfo) 
+  const [file, setFile] = useState<File | null>(null)
 
   const handleOnChange = (e : React.SyntheticEvent)=>{
     e.preventDefault()

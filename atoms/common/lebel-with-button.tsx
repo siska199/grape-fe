@@ -1,15 +1,15 @@
-import React from 'react'
-import { BsPlusSquare } from 'react-icons/bs'
+import { BsPlusSquare } from 'react-icons/bs';
 
-type Props = {
+type TProps = {
     name : string;
     onAdd : ()=>void;
 }
 
-const LabelWithPlusButton = ({name, onAdd}: Props) => {
+const Label = (props: TProps) => {
+  const {name, onAdd} = props
   return (
     <label htmlFor="" className='label flex gap-2 items-center'>{name.toUpperCase()} <BsPlusSquare onClick={onAdd} className='cursor-pointer'/> </label>
     )
 }
 
-export default LabelWithPlusButton
+export default Label

@@ -3,6 +3,8 @@ import Page from '../layouts/Page'
 import {useSession} from "next-auth/react"
 import {AiOutlinePlus} from "react-icons/ai"
 import {useRouter} from "next/router"
+import {motion} from "framer-motion"
+
 const Home: NextPage = () => {
   const {data:session} = useSession()
   const router = useRouter()
@@ -24,8 +26,8 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className='text-sm flex gap-4'>
-            <button className='px-4 py-1 border border-cd800 hover:bg-cd800 h-[2rem] w-[9rem]'>View portofolio</button>
-            <button className='flex justify-center items-center gap-3 py-1 bg-cd800 hover:bg-transparent hover:border hover:border-cd800 w-[9rem] h-[2rem] px-4'><AiOutlinePlus/> <span>Follow</span></button>
+            <motion.button whileTap={{scale:0.9}} className='px-4 py-1 border border-cd800 hover:bg-cd800 h-[2rem] w-[9rem]'>View portofolio</motion.button>
+            <motion.button whileTap={{scale:0.9}} className='flex justify-center items-center gap-3 py-1 bg-cd800 hover:bg-transparent hover:border hover:border-cd800 w-[9rem] h-[2rem] px-4'><AiOutlinePlus/> <span>Follow</span></motion.button>
           </div>
         </section>
 

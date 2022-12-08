@@ -1,14 +1,14 @@
 import React from 'react'
 import { MdLabel } from 'react-icons/md';
 
-type Props = {
+type TProps = {
   data : string[];
   name : string;
   customeStyle : string;
 }
 
-const Dropdown = ({data,name, customeStyle}: Props) => {
-  console.log(data)
+const Dropdown = (props: TProps) => {
+  const {data,name, customeStyle} = props
   return (
     <div className={`${customeStyle} flex flex-col gap-1`}>
       <label htmlFor="">{name.toUpperCase()}</label>

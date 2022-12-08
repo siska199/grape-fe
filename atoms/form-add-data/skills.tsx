@@ -1,13 +1,10 @@
-import React from 'react'
-import Input from './Input'
-import {AiOutlineCloseCircle} from "react-icons/ai"
-import { skillLevel } from '../lib/data'
-import Dropdown from './Dropdown'
-import Button from './Button'
-import AddField from '../layouts/AddField'
-type Props = {}
+import Button from '@atoms/common/button'
+import Input from '@atoms/input/input'
+import AddField from '@layouts/AddField'
+import { skillLevel } from '@lib/data'
+import Dropdown from '../input/dropdown'
 
-const AddSkills = (props: Props) => {
+const AddSkills = (props: undefined) => {
   return (
     <AddField onClose={()=>console.log("")}>
       <div className='w-full flex flex-col gap-2'>
@@ -17,7 +14,7 @@ const AddSkills = (props: Props) => {
         </div>
         <div className='w-full grid grid-cols-4 gap-4'>
             <Input name={"type"} value={""} customeStyle={"w-full col-start-1 col-end-3"}/>
-            <Button label={"add"} customeStyle={"bg-cd700 w-[4rem] mt-auto"} onClick={()=>console.log("")}/>
+            <Button name={"add"} customeStyle={"bg-cd700 w-[4rem] mt-auto"} onClick={()=>console.log("")}/>
         </div>
       </div>
     </AddField>

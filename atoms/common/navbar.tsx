@@ -1,12 +1,10 @@
-import React,{useState} from 'react'
-import {useSession} from "next-auth/react"
-import { menus } from '../lib/data'
+import { menus } from '@lib/data'
+import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
-import Search from './Search'
+import { useState } from 'react'
+import Search from './search'
 
-type Props = {}
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
     const {data:session, status} = useSession()
     const router = useRouter()
     const [expandSearch,setExpandSearch] = useState(false)
