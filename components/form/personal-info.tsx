@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
-import Input from '../atoms/Input'
-import TextArea from '../atoms/TextArea'
-import UploadPhoto from '../atoms/UploadPhoto'
-import { useAppSelector } from '../lib/redux/store'
-import ListSocialMedia from './ListSocialMedia'
+import Input from '@atoms/input/input'
+import TextArea from '@atoms/input/text-area'
+import UploadPhoto from '@atoms/input/upload-photo'
+import { useAppSelector } from '@lib/redux/store'
+import ListSocialMedia from '@components/list/ListSocialMedia'
+
 
 type Props = {}
 
@@ -11,20 +12,20 @@ const FormPersonalInfo = (props : Props) => {
   const form = useAppSelector(state=>state.resume.formPersonalInfo) 
   const [file, setFile] = useState<File | null>(null)
 
-  const handleOnChange = (e : React.SyntheticEvent)=>{
+  const handleOnChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
     e.preventDefault()
 
   }
 
   return (
     <div className='container-form'>
-        <Input name={"fullname"} value={""} />
-        <UploadPhoto name={"Profile Picture Resume"} value={""} />
+        <Input onChange={handleOnChange} type="text"  name={"fullname"} value={""} />
+        <UploadPhoto onChange={handleOnChange}  name={"profile picture resume"} value={""} />
         <div className='grid gap-5 grid-cols-2 w-full'>
-            <Input name={"phone"} value={""} />
-            <Input name={"email"} value={""} />
+            <Input onChange={handleOnChange} type="text" name={"phone"} value={""} />
+            <Input onChange={handleOnChange} type="text" name={"email"} value={""} />
         </div>
-        <TextArea name={"about me"} value={""} />
+        <TextArea onChange={handleOnChange} name={"about me"} value={""} />
         <ListSocialMedia/>
     </div>
   )

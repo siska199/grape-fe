@@ -1,9 +1,8 @@
 import React from 'react'
-import ListProject from './ListProject'
+import ListProject from '@components/list/ListProject'
 
-type Props = {}
 
-const FormProjects = (props: Props) => {
+const FormProjects = (props: undefined) => {
   return (
     <div className='container-form'>
         <ListProject/>

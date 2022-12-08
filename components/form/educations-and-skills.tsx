@@ -1,10 +1,9 @@
 import React from 'react'
-import ListEducation from '../ListEducation'
-import ListSkill from '../ListSkill'
+import ListEducation from '@components/list/ListEducation'
+import ListSkill from '@components/list/ListSkill'
 
-type Props = {}
 
-const FormEducationsAndSkills = (props: Props) => {
+const FormEducationsAndSkills = (props: undefined) => {
 
 
   return (

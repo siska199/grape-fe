@@ -1,9 +1,7 @@
 import React from 'react'
-import ListExperiance from './ListExperiance'
+import ListExperiance from '@components/list/ListExperiance'
 
-type Props = {}
-
-const FormExperiance = (props: Props) => {
+const FormExperiance = (props: undefined) => {
   return (
     <div className='container-form'>
         <ListExperiance/>

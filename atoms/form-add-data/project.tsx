@@ -1,21 +1,32 @@
-import React from 'react'
+import Input from '@atoms/input/input'
+import TextArea from '@atoms/input/text-area'
+import UploadPhoto from '@atoms/input/upload-photo'
 import Modal from '@layouts/Modal'
 import { handleModalAddProject } from '@lib/redux/features/resumeSlice'
 import { useAppDispatch } from '@lib/redux/store'
-import Input from '@atoms/input/input'
-import UploadPhoto from '@atoms/input/upload-photo'
-import TextArea from '@atoms/input/text-area'
+import React, { useState } from 'react'
 
 const AddProject = (props: undefined) => {
+    const [isApp, setIsApp] = useState<boolean>(true)
     const disptach = useAppDispatch()
+    const handleOnChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
+
+    }
+
   return (
     <Modal title={"Add project"} onClose={()=>disptach(handleModalAddProject(false))} onSave={()=>console.log("save")} >
         <>
-            <Input name={"title"} value={""}/>
-            <UploadPhoto name={"Image"} value={""}/>
-            <TextArea name={"About"} value={""}/>
-            <Input name={"Link Repository"} value={""}/>
-            <Input name={"Link Project"} value={""}/>
+            <Input onChange={handleOnChange} type="text" name={"title"} value={""}/>
+            <UploadPhoto onChange={handleOnChange}  name={"image"} value={""}/>
+            <TextArea onChange={handleOnChange}  name={"about"} value={""}/>
+            {
+              isApp && (
+                <>
+                  <Input onChange={handleOnChange} type="text" name={"link repository"} value={""}/>
+                  <Input onChange={handleOnChange} type="text" name={"link project"} value={""}/>
+                </>
+              )
+            }
         </>
     </Modal>
   )

@@ -28,6 +28,10 @@ export const initialState = {
             step:4
         }
     ],
+    formSocialMedia : {
+        name : "",
+        link : "",
+    },
     formPersonalInfo : {
         fullname : "",
         image : "",
@@ -35,7 +39,23 @@ export const initialState = {
         email : "",
         aboutMe : "",
         socialMedias : []
+    },
+    formEducation : {
+        institution : "",
+        major : "",
+        logo : "",
+        activities : []
+    },
+    formSkill : {
+        name : "",
+        level : "",
+        type : ""
+    },
+    formEducationsAndSkills:{
+        educations : [],
+        skills : []
     }
+    
 }
 
 
@@ -45,7 +65,7 @@ const resumeSlice = createSlice({
     initialState,
     reducers : {
         /**
-         * law : if user click next so we will hit api save with status undone if  currentStepFormResume < 5
+         * Law : if user click next so we will hit api save with status undone if  currentStepFormResume < 5
          */
         handleNextStep : (state,action:PayloadAction<undefined>)=>{
             state.stepsFormResume = current(state).stepsFormResume.map(data=>{
@@ -66,6 +86,9 @@ const resumeSlice = createSlice({
         handleBackStep : (state,action:PayloadAction<undefined>)=>{
             state.currentStepFormResume = current(state).currentStepFormResume -1
         },
+        /**
+         * Handle modal
+         */
         handleModalAddEducation : (state, action:PayloadAction<boolean>)=>{
             state.modalAddEducation = action.payload
         },

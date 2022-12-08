@@ -1,9 +1,8 @@
+import { TInputProps } from '@lib/typescript/type-props'
 import React from 'react'
 
-type TProps = {
-  data : string[];
-  name : string;
-  customeStyle : string;
+type TProps = Omit<TInputProps<HTMLOptionElement>,"type"> & {
+  data : string[]
 }
 
 const Dropdown = (props: TProps) => {
