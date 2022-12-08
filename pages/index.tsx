@@ -1,9 +1,9 @@
+import { motion } from "framer-motion"
 import type { NextPage } from 'next'
+import { useSession } from "next-auth/react"
+import { useRouter } from "next/router"
+import { AiOutlinePlus } from "react-icons/ai"
 import Page from '../layouts/Page'
-import {useSession} from "next-auth/react"
-import {AiOutlinePlus} from "react-icons/ai"
-import {useRouter} from "next/router"
-import {motion} from "framer-motion"
 
 const Home: NextPage = () => {
   const {data:session} = useSession()

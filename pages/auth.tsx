@@ -1,7 +1,7 @@
-import {NextPage} from "next"
-import {signIn,signOut, useSession} from "next-auth/react"
+import { NextPage } from "next"
+import { signIn, signOut, useSession } from "next-auth/react"
+import { FcGoogle } from "react-icons/fc"
 import Page from "../layouts/Page"
-import {FcGoogle} from "react-icons/fc"
 
 type Props = {}
 
@@ -13,7 +13,7 @@ const Auth : NextPage = (props: Props) => {
       <section className="flex w-full p-4">
         <div className="m-auto flex flex-col gap-2 justify-center items-center">
           <h1 className="text-center font-bold text-[2.5rem] ">Login</h1>
-          <p className="font-thin w-[30rem] text-center px-4">Welcome! Login to generate your best portofolio and stand up in front of recruiter with with GRAPE</p>
+          <p className="font-thin w-[30rem] text-center px-4">Welcome! Login to generate your best portofolio and stand up in front of recruiter with GRAPE</p>
           <img src={"assets/agreement.png"} width={200} alt="" />
           {
             session?(

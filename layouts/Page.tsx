@@ -1,14 +1,14 @@
-import React from 'react'
-import Head from "next/head"
-import {useRouter} from "next/router"
-import Navbar from '../atoms/Navbar';
+import Navbar from '@atoms/common/navbar';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import React from 'react';
 
-type Props = {
+type TProps = {
     children : React.ReactNode;
     title : string
 }
 
-const Page : React.FC<Props> = ({children, title}) => {
+const Page : React.FC<TProps> = ({children, title}) => {
   const router = useRouter()
   const currentPath = router.pathname
   return (

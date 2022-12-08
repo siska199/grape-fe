@@ -1,23 +1,21 @@
-import React from 'react'
-import FormEducationsAndSkills from '../components/form/educations-and-skills'
-import FormPersonalInfo from '../components/FormPersonalInfo'
-import StepsFormResume from '../components/StepsFormResume'
-import Page from '../layouts/Page'
-import { useAppDispatch, useAppSelector } from '../lib/redux/store'
-import Button from '../atoms/common/button'
-import FormExperiance from '../components/FormExperiance'
-import FormProjects from '../components/FormProjects'
-import { handleBackStep, handleNextStep } from '../lib/redux/features/resumeSlice'
-type Props = {}
+import Button from '@atoms/common/button'
+import FormEducationsAndSkills from '@components/form/educations-and-skills'
+import FormExperiance from '@components/form/experiances'
+import FormPersonalInfo from '@components/form/personal-info'
+import FormProjects from '@components/form/projects'
+import StepsForm from '@components/StepsForm'
+import Page from '@layouts/Page'
+import { handleBackStep, handleNextStep } from '@lib/redux/features/resumeSlice'
+import { useAppDispatch, useAppSelector } from '@lib/redux/store'
 
-const FormResume = (props: Props) => {
+const FormResume = (props: {}) => {
   const dispatch = useAppDispatch()
   const currentStep = useAppSelector(state=>state.resume.currentStepFormResume)
 
   return (
     <Page title={"form resume | grape"}>
       <div className='flex p-4 flex-[1] overflow-hidden md:flex-[0.7] xl:flex-[0.6] flex-col items-center mx-auto'>
-        <StepsFormResume/>
+        <StepsForm/>
         {currentStep==1&&<FormPersonalInfo/>}
         {currentStep==2&&<FormEducationsAndSkills/>}
         {currentStep==3&&<FormExperiance/>}
@@ -25,9 +23,9 @@ const FormResume = (props: Props) => {
         <div className='ml-auto'>
             {
               currentStep != 1 && 
-              <Button customeStyle='bg-pink-800 mr-4' label={"Back"} onClick={()=>dispatch(handleBackStep())}/>
+              <Button customeStyle='bg-pink-800 mr-4' name={"back"} onClick={()=>dispatch(handleBackStep())}/>
             }
-            <Button label={"Next"} customeStyle={`bg-sky-800 mt-4 ml-auto`} onClick={()=>dispatch(handleNextStep())}/>
+            <Button name={"next"} customeStyle={`bg-sky-800 mt-4 ml-auto`} onClick={()=>dispatch(handleNextStep())}/>
         </div>
       </div>
     </Page>

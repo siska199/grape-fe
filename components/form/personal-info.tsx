@@ -6,9 +6,7 @@ import { useAppSelector } from '@lib/redux/store'
 import ListSocialMedia from '@components/list/ListSocialMedia'
 
 
-type Props = {}
-
-const FormPersonalInfo = (props : Props) => {
+const FormPersonalInfo = (props : {}) => {
   const form = useAppSelector(state=>state.resume.formPersonalInfo) 
   const [file, setFile] = useState<File | null>(null)
 

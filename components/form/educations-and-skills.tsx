@@ -3,8 +3,7 @@ import ListEducation from '@components/list/ListEducation'
 import ListSkill from '@components/list/ListSkill'
 
 
-const FormEducationsAndSkills = (props: undefined) => {
-
+const FormEducationsAndSkills = (props: {}) => {
 
   return (
     <div className='container-form'>
