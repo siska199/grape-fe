@@ -1,9 +1,9 @@
 
-export interface TInputProps{
+export interface TInputProps<T>{
     name : string;
     value : string;
-    onChange : (e:React.ChangeEvent)=>void;
+    onChange : (e:React.ChangeEvent<T>)=>void;
     customeStyle? : string;
-    type : "text" | ""
+    type : "text" | "password" | "checkbox" | "date" | "email"
 }
 

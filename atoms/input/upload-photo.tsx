@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 import { FcAddImage } from "react-icons/fc"
 import { TInputProps } from '@lib/typescript/type-props'
 
-type Tprops = Omit<TInputProps,"type">
+type Tprops = Omit<TInputProps<HTMLInputElement>,"type">
 
 const UploadPhoto = (props: Tprops) => {
   const {name, value, onChange} = props

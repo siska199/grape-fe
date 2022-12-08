@@ -1,5 +1,4 @@
 import React from 'react'
-import { MdLabel } from 'react-icons/md';
 
 type TProps = {
   data : string[];

@@ -1,7 +1,9 @@
 import React from 'react'
 import { TInputProps } from '@lib/typescript/type-props'
 
-const Input = (props: TInputProps) => {
+type TProps = TInputProps<HTMLInputElement>
+
+const Input = (props: TProps) => {
   const {name,value,type="text",customeStyle, onChange} = props
   return (
     <div className={`flex flex-col ${customeStyle} w-full `}>

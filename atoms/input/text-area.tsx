@@ -1,7 +1,7 @@
 import React from 'react'
 import { TInputProps } from '@lib/typescript/type-props'
 
-type TProps = Omit<TInputProps,"type"|"customeStyle">
+type TProps = Omit<TInputProps<HTMLTextAreaElement>,"type"|"customeStyle">
 
 const TextArea = (props : TProps) => {
   const {name, value, onChange} = props
