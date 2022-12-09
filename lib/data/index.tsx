@@ -30,6 +30,23 @@ export const menus : Menu[] = [
   },
 ]
 
+
+
+export const dropdownMenuNavbar = [
+  {
+    name : "Home",
+    url : "/"
+  },
+  {
+    name: "Edit Resume",
+    url : "/form-resume"
+  },
+  {
+    name : "Logout",
+    url:"/"
+  }
+]
+
 export const educations = [
     {
       institution : "Universitas Negeri Malang (2017-2021)",
