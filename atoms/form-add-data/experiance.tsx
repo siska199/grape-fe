@@ -1,7 +1,6 @@
-import Button from '@atoms/common/button'
 import Input from '@atoms/input/input'
-import ListActivity from '@components/list/ListActivity'
-import Modal from '@layouts/Modal'
+import ListActivity from '@components/list/activity'
+import Modal from '@layouts/modal'
 import { handleModalAddExperiance } from '@lib/redux/features/resumeSlice'
 import { useAppDispatch } from '@lib/redux/store'
 import React from 'react'
@@ -22,7 +21,6 @@ const AddExperiance = (props:{}) => {
           </div>
           <Input type="checkbox"  onChange={handleOnChange} customeStyle='items-start' value="" name="Current Position" />
           <ListActivity/>
-          <Button name="Save" customeStyle='bg-cd700 w-[5rem] ml-auto' onClick={()=>console.log("")}/>
         </>
     </Modal>
   )

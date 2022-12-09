@@ -1,7 +1,7 @@
-import React, {useRef} from 'react'
-import AddField from '@layouts/AddField'
-import Input from '@atoms/input/input'
 import Button from '@atoms/common/button'
+import Input from '@atoms/input/input'
+import AddField from '@layouts/add-field'
+import React from 'react'
 
 const AddActivity = (props:{}) => {
   

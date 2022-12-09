@@ -1,7 +1,6 @@
-import React from 'react'
-import AddExperiance from '@atoms/form-add-data/experiance'
 import Experiance from '@atoms/card/experiance'
 import Label from '@atoms/common/lebel-with-button'
+import AddExperiance from '@atoms/form-add-data/experiance'
 import { experiances } from '@lib/data'
 import { handleModalAddExperiance } from '@lib/redux/features/resumeSlice'
 import { useAppDispatch, useAppSelector } from '@lib/redux/store'

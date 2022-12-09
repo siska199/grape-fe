@@ -1,22 +1,15 @@
-import React, {useState} from 'react'
-import {BsPlusSquare} from "react-icons/bs"
-import {AiOutlineEdit} from "react-icons/ai"
 import AddSocialMedia from '@atoms/form-add-data/social-media'
+import { useState } from 'react'
+import { AiOutlineEdit } from "react-icons/ai"
+import { BsPlusSquare } from "react-icons/bs"
 
-const ListSocialMedia = (props: {}) => {
+type TProps = {
+    socialMedias : TSocialMedia[] | []
+}
+
+const ListSocialMedia = (props: TProps) => {
   const [onChange, setOnChange] = useState<null | "edit"|"add">(null)
-  const socialMedias = [
-    {
-        id : 1,
-        name : "github",
-        link : "https://github.com/siska199"
-    },
-    {
-        id : 2,
-        name : "linkind",
-        link : "https://www.linkedin.com/in/siska-apriana-rifianti/"
-    }
-  ]
+  const {socialMedias} = props
   return (
     <div className='w-full'>
         <label htmlFor="" className='label flex gap-3 items-center'>LIST SOCIAL MEDIA <BsPlusSquare onClick={()=>setOnChange("add")} className='cursor-pointer'/> </label>

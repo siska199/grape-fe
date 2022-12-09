@@ -1,7 +1,7 @@
 import Button from '@atoms/common/button'
-import { useRef, useState } from 'react'
-import { FcAddImage } from "react-icons/fc"
 import { TInputProps } from '@lib/typescript/type-props'
+import { useRef } from 'react'
+import { FcAddImage } from "react-icons/fc"
 
 type Tprops = Omit<TInputProps<HTMLInputElement>,"type">
 

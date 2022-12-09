@@ -1,4 +1,3 @@
-import React from 'react'
 import { TInputProps } from '@lib/typescript/type-props'
 
 type TProps = Omit<TInputProps<HTMLTextAreaElement>,"type"|"customeStyle">

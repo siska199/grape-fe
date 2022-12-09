@@ -1,5 +1,4 @@
-import React from 'react'
-import ListExperiance from '@components/list/ListExperiance'
+import ListExperiance from '@components/list/experiance'
 
 const FormExperiance = (props: {}) => {
   return (

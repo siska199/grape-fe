@@ -1,4 +1,3 @@
-import React from 'react'
 import Step from '@atoms/common/step'
 import { useAppSelector } from '../lib/redux/store'
 

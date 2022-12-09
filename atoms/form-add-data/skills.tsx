@@ -1,6 +1,6 @@
 import Button from '@atoms/common/button'
 import Input from '@atoms/input/input'
-import AddField from '@layouts/AddField'
+import AddField from '@layouts/add-field'
 import { skillLevel } from '@lib/data'
 import React from 'react'
 import Dropdown from '../input/dropdown'

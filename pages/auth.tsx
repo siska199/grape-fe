@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 import { signIn, signOut, useSession } from "next-auth/react"
 import { FcGoogle } from "react-icons/fc"
-import Page from "../layouts/Page"
+import Page from "../layouts/page"
 
 type Props = {}
 

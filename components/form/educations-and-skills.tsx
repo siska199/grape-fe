@@ -1,6 +1,5 @@
-import React from 'react'
-import ListEducation from '@components/list/ListEducation'
-import ListSkill from '@components/list/ListSkill'
+import ListEducation from '@components/list/education'
+import ListSkill from '@components/list/skill'
 
 
 const FormEducationsAndSkills = (props: {}) => {

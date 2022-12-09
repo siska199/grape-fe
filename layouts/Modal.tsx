@@ -19,7 +19,7 @@ const Modal = ({children, title, onClose, onSave}: TProps) => {
               {children}
             </form>
             <div className=' sticky bottom-0 bg-cd900 pt-4 flex'>
-              <Button name={"Save"} customeStyle='bg-cd700 py-2 w-[7rem] ml-auto' onClick={onSave}/>
+              <Button name={"save"} customeStyle='bg-cd700 py-2 w-[7rem] ml-auto' onClick={onSave}/>
             </div>
         </section>
     </article>

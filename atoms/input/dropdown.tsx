@@ -1,5 +1,4 @@
 import { TInputProps } from '@lib/typescript/type-props'
-import React from 'react'
 
 type TProps = Omit<TInputProps<HTMLOptionElement>,"type"> & {
   data : string[]

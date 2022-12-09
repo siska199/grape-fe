@@ -1,5 +1,4 @@
-import React from 'react'
-import ListProject from '@components/list/ListProject'
+import ListProject from '@components/list/project'
 
 
 const FormProjects = (props: {}) => {

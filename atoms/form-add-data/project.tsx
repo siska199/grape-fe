@@ -1,7 +1,7 @@
 import Input from '@atoms/input/input'
 import TextArea from '@atoms/input/text-area'
 import UploadPhoto from '@atoms/input/upload-photo'
-import Modal from '@layouts/Modal'
+import Modal from '@layouts/modal'
 import { handleModalAddProject } from '@lib/redux/features/resumeSlice'
 import { useAppDispatch } from '@lib/redux/store'
 import React, { useState } from 'react'

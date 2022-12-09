@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/router"
 import { AiOutlinePlus } from "react-icons/ai"
-import Page from '../layouts/Page'
+import Page from '../layouts/page'
 
 const Home: NextPage = () => {
   const {data:session} = useSession()
