@@ -3,7 +3,7 @@ import Input from '@atoms/input/input'
 import AddField from '@layouts/add-field'
 import { skillLevel } from '@lib/data'
 import React from 'react'
-import Dropdown from '../input/dropdown'
+import SelectInput from '../input/select-input'
 
 const AddSkills = (props: {}) => {
 
@@ -16,7 +16,7 @@ const AddSkills = (props: {}) => {
       <div className='w-full flex flex-col gap-2'>
         <div className='w-full grid grid-cols-2 gap-4'>
             <Input onChange={handleOnChange} type="text" name={"name"} value={""} customeStyle={"w-full"}/>
-            <Dropdown value={""} onChange={handleOnChange} name={"level"} data={skillLevel} customeStyle={"w-full"}/>
+            <SelectInput value={""} onChange={handleOnChange} name={"level"} data={skillLevel} customeStyle={"w-full"}/>
         </div>
         <div className='w-full grid grid-cols-4 gap-4'>
             <Input onChange={handleOnChange} type="text" name={"type"} value={""} customeStyle={"w-full col-start-1 col-end-3"}/>

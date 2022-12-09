@@ -4,7 +4,7 @@ type TProps = Omit<TInputProps<HTMLOptionElement>,"type"> & {
   data : string[]
 }
 
-const Dropdown = (props: TProps) => {
+const SelectInput = (props: TProps) => {
   const {data,name, customeStyle} = props
   return (
     <div className={`${customeStyle} flex flex-col gap-1`}>
@@ -20,4 +20,4 @@ const Dropdown = (props: TProps) => {
   )
 }
 
-export default Dropdown
+export default SelectInput
