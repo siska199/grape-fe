@@ -7,7 +7,7 @@ import { handleModalAddEducation } from '@lib/redux/features/resumeSlice'
 import { useAppDispatch } from '@lib/redux/store'
 
 
-const AddEducation = (props: undefined) => {
+const AddEducation = (props: {}) => {
     const dispatch = useAppDispatch()
 
     const handleOnChange = (e: React.ChangeEvent)=>{
@@ -19,7 +19,7 @@ const AddEducation = (props: undefined) => {
             <>
                 <Input type="text" onChange={handleOnChange} name={"institution"} value={""} />
                 <Input type="text" onChange={handleOnChange} name={"major"} value={""} />
-                <UploadPhoto name={"logo"} value={""}/>
+                <UploadPhoto onChange={handleOnChange} name={"logo"} value={""}/>
                 <ListActivity/>
                 <Button name={"save"} customeStyle={"ml-auto bg-sky-800"} onClick={()=>console.log("")}/>
             </>

@@ -3,7 +3,7 @@ import Button from '@atoms/common/button'
 import Input from '@atoms/input/input'
 import AddField from '@layouts/AddField'
 
-const AddSocialMedia = (props: undefined) => {
+const AddSocialMedia = (props: {}) => {
   const handleOnChange = (e : React.ChangeEvent<HTMLInputElement>)=>{
     
   }

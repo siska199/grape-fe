@@ -1,10 +1,10 @@
 import React from 'react'
-import AddExperiance from '../atoms/AddExperiance'
-import CardExperiance from '../atoms/CardExperiance'
-import LabelWithPlusButton from '../atoms/LabelWithPlusButton'
-import { experiances } from '../lib/data'
-import { handleModalAddExperiance } from '../lib/redux/features/resumeSlice'
-import { useAppDispatch, useAppSelector } from '../lib/redux/store'
+import AddExperiance from '@atoms/form-add-data/experiance'
+import Experiance from '@atoms/card/experiance'
+import Label from '@atoms/common/lebel-with-button'
+import { experiances } from '@lib/data'
+import { handleModalAddExperiance } from '@lib/redux/features/resumeSlice'
+import { useAppDispatch, useAppSelector } from '@lib/redux/store'
 
 type Props = {}
 
@@ -13,11 +13,11 @@ const ListExperiance = (props: Props) => {
     const modalAddExperiance = useAppSelector(state=>state.resume.modalAddExperiance)
   return (
     <div className='container-dashed'>
-        <LabelWithPlusButton name="Experiances" onAdd={()=>dispatch(handleModalAddExperiance(true))} />
+        <Label name="Experiances" onAdd={()=>dispatch(handleModalAddExperiance(true))} />
         <div className='container-card'>
             {
                 experiances.map((experiance,i)=>(
-                    <CardExperiance key={i} data={experiance}/>
+                    <Experiance key={i} {...experiance}/>
                 ))
             }
         </div>

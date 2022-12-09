@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import AddActivity from '../../atoms/form-add-data/activity'
+import AddActivity from '@atoms/form-add-data/activity'
 import {BsPlusSquare} from "react-icons/bs"
 
 type Props = {}

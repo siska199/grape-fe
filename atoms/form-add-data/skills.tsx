@@ -5,7 +5,7 @@ import { skillLevel } from '@lib/data'
 import React from 'react'
 import Dropdown from '../input/dropdown'
 
-const AddSkills = (props: undefined) => {
+const AddSkills = (props: {}) => {
 
   const handleOnChange = (e : React.ChangeEvent<HTMLInputElement | HTMLOptionElement>)=>{
 

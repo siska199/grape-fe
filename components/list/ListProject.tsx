@@ -1,10 +1,9 @@
-import React from 'react'
-import LabelWithPlusButton from '../atoms/LabelWithPlusButton'
-import { handleModalAddProject } from '../lib/redux/features/resumeSlice'
-import { useAppDispatch, useAppSelector } from '../lib/redux/store'
-import { projects } from '../lib/data'
-import CardProject from '../atoms/CardProject'
-import AddProject from '../atoms/AddProject'
+import Project from '@atoms/card/project'
+import Label from '@atoms/common/lebel-with-button'
+import AddProject from '@atoms/form-add-data/project'
+import { projects } from '@lib/data'
+import { handleModalAddProject } from '@lib/redux/features/resumeSlice'
+import { useAppDispatch, useAppSelector } from '@lib/redux/store'
 
 type Props = {}
 
@@ -13,11 +12,11 @@ const ListProject = (props: Props) => {
     const modalAddProject = useAppSelector(state=>state.resume.modalAddProject)
   return (
     <div className='container-dashed'>
-        <LabelWithPlusButton name={"Projects"} onAdd={()=>disptach(handleModalAddProject(true))}/>
+        <Label name={"Projects"} onAdd={()=>disptach(handleModalAddProject(true))}/>
         <div className='container-card'>
             {
                 projects.map((data,i)=>(
-                    <CardProject key={i} data={data}/>
+                    <Project key={i} {...data}/>
                 ))
             }
         </div>

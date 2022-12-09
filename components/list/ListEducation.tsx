@@ -1,23 +1,20 @@
-import React from 'react'
-import {BsPlusSquare} from "react-icons/bs"
-import AddEducation from '../atoms/AddEducation'
-import CardEducation from '../atoms/CardEducation'
-import LabelWithPlusButton from '../atoms/LabelWithPlusButton'
-import { educations } from '../lib/data'
-import { handleModalAddEducation } from '../lib/redux/features/resumeSlice'
-import { useAppDispatch, useAppSelector } from '../lib/redux/store'
-type Props = {}
+import Education from '@atoms/card/education'
+import Label from '@atoms/common/lebel-with-button'
+import AddEducation from '@atoms/form-add-data/education'
+import { educations } from '@lib/data'
+import { handleModalAddEducation } from '@lib/redux/features/resumeSlice'
+import { useAppDispatch, useAppSelector } from '@lib/redux/store'
 
-const ListEducation = (props: Props) => {
+const ListEducation = (props: {}) => {
     const modalAddEducation = useAppSelector(state=>state.resume.modalAddEducation)
     const dispatch = useAppDispatch()
   return (
     <div className='container-dashed'>
-        <LabelWithPlusButton name="Educations" onAdd={()=>dispatch(handleModalAddEducation(true))}/>
+        <Label name="Educations" onAdd={()=>dispatch(handleModalAddEducation(true))}/>
         <div className='container-card'>
         {
             educations.map((education,i)=>(
-            <CardEducation key={i}  data={education}/>
+            <Education key={i}  {...education}/>
             ))
         }
         </div>

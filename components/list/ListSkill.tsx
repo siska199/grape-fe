@@ -1,10 +1,7 @@
-import React from 'react'
-import {BsPlusSquare } from "react-icons/bs"
-import AddSkills from '../atoms/AddSkills'
-import { skills } from '../lib/data'
-type Props = {}
+import AddSkills from "@atoms/form-add-data/skills"
+import { BsPlusSquare } from "react-icons/bs"
 
-const ListSkill = (props: Props) => {
+const ListSkill = (props:{}) => {
   
   return (
     <div>

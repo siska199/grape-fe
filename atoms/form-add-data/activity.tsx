@@ -3,7 +3,7 @@ import AddField from '@layouts/AddField'
 import Input from '@atoms/input/input'
 import Button from '@atoms/common/button'
 
-const AddActivity = (props: undefined) => {
+const AddActivity = (props:{}) => {
   
   const handleOnChange = (e :React.ChangeEvent<HTMLInputElement>)=>{
 

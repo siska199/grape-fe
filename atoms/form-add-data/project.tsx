@@ -6,7 +6,7 @@ import { handleModalAddProject } from '@lib/redux/features/resumeSlice'
 import { useAppDispatch } from '@lib/redux/store'
 import React, { useState } from 'react'
 
-const AddProject = (props: undefined) => {
+const AddProject = (props: {}) => {
     const [isApp, setIsApp] = useState<boolean>(true)
     const disptach = useAppDispatch()
     const handleOnChange = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{

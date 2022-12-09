@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 import {BsPlusSquare} from "react-icons/bs"
 import {AiOutlineEdit} from "react-icons/ai"
-import AddSocialMedia from '../atoms/AddSocialMedia'
-type Props = {}
+import AddSocialMedia from '@atoms/form-add-data/social-media'
 
-const ListSocialMedia = (props: Props) => {
+const ListSocialMedia = (props: {}) => {
   const [onChange, setOnChange] = useState<null | "edit"|"add">(null)
   const socialMedias = [
     {
