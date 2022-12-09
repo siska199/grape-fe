@@ -4,8 +4,9 @@ import { SessionProvider } from "next-auth/react"
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 import client from '../lib/graphql/apolloClient'
-import store from '../lib/redux/store'
+import {store, persistor} from '@lib/redux/store'
 import '../styles/globals.css'
 
 const variants = {
@@ -28,18 +29,20 @@ function MyApp({ Component, pageProps : {session, ...pageProps} }: AppProps) {
     <ApolloProvider client={client}>
       <SessionProvider session={session}>
         <Provider store={store}>
-          <AnimatePresence exitBeforeEnter>
-            <motion.div
-              key={router.route}
-              initial="initialState"
-              animate="animateState"
-              exit="exitState"
-              transition={{duration:0.75}}
-              variants={variants}
-            >
-              <Component {...pageProps} />
-            </motion.div>
-          </AnimatePresence>
+          <PersistGate loading={null} persistor={persistor}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={router.route}
+                initial="initialState"
+                animate="animateState"
+                exit="exitState"
+                transition={{duration:0.75}}
+                variants={variants}
+              >
+                <Component {...pageProps} />
+              </motion.div>
+            </AnimatePresence>
+          </PersistGate>
         </Provider>      
       </SessionProvider>
     </ApolloProvider>

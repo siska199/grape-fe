@@ -2,17 +2,26 @@ import Input from '@atoms/input/input'
 import TextArea from '@atoms/input/text-area'
 import UploadPhoto from '@atoms/input/upload-photo'
 import ListSocialMedia from '@components/list/social-media'
-import { useAppSelector } from '@lib/redux/store'
+import { handleChangeField } from '@lib/redux/features/resumeSlice'
+import { useAppDispatch, useAppSelector } from '@lib/redux/store'
 import React, { useState } from 'react'
 
 
 const FormPersonalInfo = (props : {}) => {
-  const form = useAppSelector(state=>state.resume.formPersonalInfo) 
+  const dispatch = useAppDispatch()
+  const form = useAppSelector(state=>state.resume.form.personalInfo) 
+  console.log("form: ", form)
   const [file, setFile] = useState<File | null>(null)
 
   const handleOnChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
     e.preventDefault()
-
+    const data = {
+      type : "personalInfo",
+      value : e.target.value,
+      name : e.target.name
+    }
+    console.log("data on chnage: ", data)
+    dispatch(handleChangeField(data))
   }
 
   return (
@@ -20,8 +29,8 @@ const FormPersonalInfo = (props : {}) => {
         <Input onChange={handleOnChange} type="text"  name={"fullname"} value={form.fullname} />
         <UploadPhoto onChange={handleOnChange}  name={"profile picture resume"} value={form.image} />
         <div className='grid gap-5 grid-cols-2 w-full'>
-            <Input onChange={handleOnChange} type="text" name={"phone"} value={form.phone} />
-            <Input onChange={handleOnChange} type="text" name={"email"} value={form.email} />
+            <Input onChange={handleOnChange} type="number" name={"phone"} value={form.phone} />
+            <Input onChange={handleOnChange} type="email" name={"email"} value={form.email} />
         </div>
         <TextArea onChange={handleOnChange} name={"about me"} value={form.aboutMe} />
         <ListSocialMedia socialMedias={form.socialMedias}/>

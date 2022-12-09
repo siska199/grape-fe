@@ -28,42 +28,58 @@ export const initialState = {
             step:4
         }
     ],
-    formSocialMedia : {
-        name : "",
-        link : "",
-    },
-    formPersonalInfo : {
-        fullname : "",
-        image : "",
-        phone: "",
-        email : "",
-        aboutMe : "",
-        socialMedias : []
-    },
-    formEducation : {
-        institution : "",
-        major : "",
-        logo : "",
-        activities : []
-    },
-    formSkill : {
-        name : "",
-        level : "",
-        type : ""
-    },
-    formEducationsAndSkills:{
-        educations : [],
-        skills : []
+    form : {
+        personalInfo : {
+            fullname : "",
+            image : "",
+            phone: "",
+            email : "",
+            aboutMe : "",
+            socialMedias : []
+        },
+        socialMedia : {
+            name : "",
+            link : "",
+        },
+        education : {
+            institution : "",
+            major : "",
+            logo : "",
+            activities : []
+        },
+        skill : {
+            name : "",
+            level : "",
+            type : ""
+        },
+        educationsAndSkills:{
+            educations : [],
+            skills : []
+        }
     }
     
 }
 
 
+interface TPayloadOnChange{
+    type : string ,
+    name : string,
+    value : string
+}
 
 const resumeSlice = createSlice({
     name:"resume",
     initialState,
     reducers : {
+        /**
+         * Law : handle on change form
+         */
+        handleChangeField : (state,action:PayloadAction<TPayloadOnChange>)=>{
+            state.form[action.payload.type] = {
+                ...state.form[action.payload.type],
+                [action.payload.name] : action.payload.value
+            }
+        },
         /**
          * Law : if user click next so we will hit api save with status undone if  currentStepFormResume < 5
          */
@@ -100,5 +116,5 @@ const resumeSlice = createSlice({
         }
     }
 })
-export const {handleBackStep,handleNextStep, handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
+export const { handleChangeField,handleBackStep,handleNextStep, handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
 export default resumeSlice.reducer

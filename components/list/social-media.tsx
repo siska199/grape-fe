@@ -10,10 +10,11 @@ type TProps = {
 const ListSocialMedia = (props: TProps) => {
   const [onChange, setOnChange] = useState<null | "edit"|"add">(null)
   const {socialMedias} = props
+  console.log(onChange)
   return (
     <div className='w-full'>
         <label htmlFor="" className='label flex gap-3 items-center'>LIST SOCIAL MEDIA <BsPlusSquare onClick={()=>setOnChange("add")} className='cursor-pointer'/> </label>
-        <ul>
+        <ul className='mb-3'>
             {
                 socialMedias.map((data,i)=>(
                     <li className='font-thin ' key={i}>
@@ -24,7 +25,7 @@ const ListSocialMedia = (props: TProps) => {
         </ul>
         {
             onChange && (
-                <AddSocialMedia/>
+                <AddSocialMedia onClose={setOnChange}/>
             )
         }
     </div>
