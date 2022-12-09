@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 
         <section className='border-b flex gap-6 flex-wrap justify-between px-[1rem] md:mx-[4rem] pb-[1.2rem] md:pb-[4rem] pt-[1.2rem]'>
           <div className='flex relative'>
-            <img src={session?.user?.image as string} className="rounded-full -top-[4rem] absolute w-[8rem] border-pink-600 border-4 h-[8rem]"/>
+            <img width={128} height={128} src={session?.user?.image as string} className="rounded-full -top-[4rem] absolute w-[8rem] border-pink-600 border-4 h-[8rem]"/>
             <div className='ml-[10rem]'>
               <h1 className='font-bold text-[1.5rem] tracking-wide'>{session?.user?.name}</h1>
               <p className='font-thin'>i'm a frontend engineer</p>

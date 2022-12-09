@@ -14,7 +14,7 @@ const Auth : NextPage = (props: Props) => {
         <div className="m-auto flex flex-col gap-2 justify-center items-center">
           <h1 className="text-center font-bold text-[2.5rem] ">Login</h1>
           <p className="font-thin w-[30rem] text-center px-4">Welcome! Login to generate your best portofolio and stand up in front of recruiter with GRAPE</p>
-          <img src={"assets/agreement.png"} width={200} alt="" />
+          <img src={"assets/agreement.png"}  width={200} height={200} alt="" />
           {
             session?(
               <button onClick={()=>signOut()}>LogOut</button>

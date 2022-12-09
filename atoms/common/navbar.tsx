@@ -1,4 +1,5 @@
 import { menus } from '@lib/data'
+import { motion } from 'framer-motion'
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
 import { useState } from 'react'
@@ -26,10 +27,10 @@ const Navbar = () => {
               return menu.name=="search"?(
                 <div key={i} className='flex'>
                   <Search expand={expandSearch} setExpand={setExpandSearch}/>
-                  <li onClick={handlerMenus[menu.name]} className={`cursor-pointer ${expandSearch&&"hidden"}`}>{menu.elm({})}</li>
+                  <motion.li whileTap={{scale:0.9}} onClick={handlerMenus[menu.name]} className={`cursor-pointer ${expandSearch&&"hidden"}`}>{menu.elm({})}</motion.li>
                 </div>
               ):(
-                <li key={i} onClick={handlerMenus[menu.name]} className='cursor-pointer'>{menu.elm({src:menu.name=="profile"?session?.user?.image as string:""})}</li>
+                <motion.li whileTap={{scale:0.9}}  key={i} onClick={handlerMenus[menu.name]} className='cursor-pointer'>{menu.elm({src:menu.name=="profile"?session?.user?.image as string:""})}</motion.li>
               )
             }
             )
