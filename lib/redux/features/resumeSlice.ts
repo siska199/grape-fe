@@ -1,4 +1,5 @@
 import {createSlice, current, PayloadAction} from "@reduxjs/toolkit"
+import { uuid } from 'uuidv4';
 
 export const initialState = {
     modalAddEducation : false,
@@ -66,6 +67,15 @@ interface TPayloadOnChange{
     name : string,
     value : string
 }
+type TAddListDataForm = {
+    parentName : string ,
+} & Pick<TPayloadOnChange,"type">
+
+type TEditListDataForm = {
+    id : string,
+} & TAddListDataForm
+
+type TDeleteListDataForm = TEditListDataForm
 
 const resumeSlice = createSlice({
     name:"resume",
@@ -79,6 +89,29 @@ const resumeSlice = createSlice({
                 ...state.form[action.payload.type],
                 [action.payload.name] : action.payload.value
             }
+        },
+        /**
+         * 
+         * Law : handle add data to list
+         */
+        handleAddListDataForm : (state, action:PayloadAction<TAddListDataForm>)=>{
+            const newData = {
+                id : uuid(),
+                ...state.form[action.payload.type]
+            }
+            const keyParent = state.form[action.payload.parentName]
+            keyParent[`${action.payload.type}s`]= [
+                ...keyParent[`${action.payload.type}s`],
+                newData
+                
+            ]
+            state.form[action.payload.type] = initialState.form[action.payload.type]
+        },
+        handleEditListData : (state,action:PayloadAction<TEditListDataForm>)=>{
+            const keyParent = state.form[action.payload.parentName]
+            const dataEdited = keyParent[`${action.payload.type}s`].filter(data=>data.id==action.payload.id)
+            console.log("data edited: ", dataEdited)
+            state.form[action.payload.type] = dataEdited
         },
         /**
          * Law : if user click next so we will hit api save with status undone if  currentStepFormResume < 5
@@ -116,5 +149,5 @@ const resumeSlice = createSlice({
         }
     }
 })
-export const { handleChangeField,handleBackStep,handleNextStep, handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
+export const { handleChangeField, handleEditListData,handleAddListDataForm, handleBackStep,handleNextStep, handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
 export default resumeSlice.reducer

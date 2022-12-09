@@ -10,7 +10,6 @@ import React, { useState } from 'react'
 const FormPersonalInfo = (props : {}) => {
   const dispatch = useAppDispatch()
   const form = useAppSelector(state=>state.resume.form.personalInfo) 
-  console.log("form: ", form)
   const [file, setFile] = useState<File | null>(null)
 
   const handleOnChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
@@ -20,7 +19,6 @@ const FormPersonalInfo = (props : {}) => {
       value : e.target.value,
       name : e.target.name
     }
-    console.log("data on chnage: ", data)
     dispatch(handleChangeField(data))
   }
 

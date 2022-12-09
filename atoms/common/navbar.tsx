@@ -1,4 +1,4 @@
-import { dropdownMenuNavbar, menus } from '@lib/data'
+import { dropdownMenusNavbar, menus } from '@lib/data'
 import { motion } from 'framer-motion'
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
@@ -39,7 +39,7 @@ const Navbar = () => {
           }
           {
             toggleDropdown && (
-              <Dropdown menu={dropdownMenuNavbar}/>
+              <Dropdown menu={dropdownMenusNavbar}/>
             )
           }
         </ul>

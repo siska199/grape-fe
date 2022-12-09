@@ -2,6 +2,7 @@
 interface TSocialMedia{
     name : string;
     link : string;
+    id : string;
 }
 
 interface TPersonalInfo{

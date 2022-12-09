@@ -6,12 +6,12 @@ interface DataElm{
   src? : string;
 }
 
-interface Menu{
+interface TMenu{
   name : string,
   elm : (dataElm : DataElm)=>React.ReactElement
 }
 
-export const menus : Menu[] = [
+export const menus : TMenu[] = [
   {
     name : "search",
     elm : (data)=><CiSearch />,
@@ -30,9 +30,12 @@ export const menus : Menu[] = [
   },
 ]
 
+interface TDropdownMenuNavbar{
+  name : string;
+  url : string;
+}
 
-
-export const dropdownMenuNavbar = [
+export const dropdownMenusNavbar = [
   {
     name : "Home",
     url : "/"
