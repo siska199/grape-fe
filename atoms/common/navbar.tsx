@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import Dropdown from './Dropdown'
+import Dropdown from './dropdown'
 import Search from './search'
 
 const Navbar = () => {

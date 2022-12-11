@@ -77,6 +77,8 @@ type TEditListDataForm = {
 
 type TDeleteListDataForm = TEditListDataForm
 
+type TResetDataForm =Pick<TAddListDataForm,"parentName"|"type">
+
 const resumeSlice = createSlice({
     name:"resume",
     initialState,
@@ -92,7 +94,7 @@ const resumeSlice = createSlice({
         },
         /**
          * 
-         * Law : handle add data to list
+         * Law : handle add, edit, delete data to list
          */
         handleAddListDataForm : (state, action:PayloadAction<TAddListDataForm>)=>{
             const newData = {
@@ -109,9 +111,18 @@ const resumeSlice = createSlice({
         },
         handleEditListData : (state,action:PayloadAction<TEditListDataForm>)=>{
             const keyParent = state.form[action.payload.parentName]
-            const dataEdited = keyParent[`${action.payload.type}s`].filter(data=>data.id==action.payload.id)
-            console.log("data edited: ", dataEdited)
+            const dataEdited = keyParent[`${action.payload.type}s`].filter(data=>data.id==action.payload.id)[0]
             state.form[action.payload.type] = dataEdited
+        },
+        handleDeleteListData : (state,action:PayloadAction<TDeleteListDataForm>)=>{
+            const keyParent = state.form[action.payload.parentName]
+            keyParent[`${action.payload.type}s`] = keyParent[`${action.payload.type}s`].filter(data=>data.id!=action.payload.id) 
+        },
+        /**
+         * Law : Reset form data
+         */
+        handleResetFormData : (state,action:PayloadAction<TResetDataForm>)=>{
+            state.form[action.payload.type] = initialState.form[action.payload.type]
         },
         /**
          * Law : if user click next so we will hit api save with status undone if  currentStepFormResume < 5
@@ -149,5 +160,5 @@ const resumeSlice = createSlice({
         }
     }
 })
-export const { handleChangeField, handleEditListData,handleAddListDataForm, handleBackStep,handleNextStep, handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
+export const { handleResetFormData,handleChangeField, handleEditListData,  handleDeleteListData ,handleAddListDataForm, handleBackStep,handleNextStep, handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
 export default resumeSlice.reducer

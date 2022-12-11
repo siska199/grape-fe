@@ -1,7 +1,7 @@
 import Button from '@atoms/common/button'
 import Input from '@atoms/input/input'
 import AddField from '@layouts/add-field'
-import { handleAddListDataForm, handleChangeField } from '@lib/redux/features/resumeSlice'
+import { handleAddListDataForm, handleChangeField, handleResetFormData } from '@lib/redux/features/resumeSlice'
 import { useAppDispatch, useAppSelector } from '@lib/redux/store'
 import React from 'react'
 
@@ -10,8 +10,8 @@ type TProps = {
 }
 
 const AddSocialMedia = (props: TProps) => {
-  const dispatch = useAppDispatch()
   const {onClose}= props
+  const dispatch = useAppDispatch()
   const form = useAppSelector(state=>state.resume.form.socialMedia)
   const handleOnChange = (e : React.ChangeEvent<HTMLInputElement>)=>{
     dispatch(handleChangeField({
@@ -26,8 +26,15 @@ const AddSocialMedia = (props: TProps) => {
       type : "socialMedia",
     }))
   }
+  const handleOnClose = ()=>{
+    onClose(null)
+    dispatch(handleResetFormData({
+      type : "socialMedia",
+      parentName:"personalInfo"
+    }))
+  }
   return (
-    <AddField onClose={()=>onClose(null)}>
+    <AddField onClose={()=>handleOnClose()}>
           <Input onChange={handleOnChange} type="text" name={"name"} value={form.name} customeStyle={"w-[40%]"}/>
           <Input onChange={handleOnChange} type="text" name={"link"} value={form.link} customeStyle={"w-[40%]"}/>   
           <Button customeStyle={"bg-cd700 mt-auto h-[2.2rem]"} name={"add"} onClick={()=>handleAddData()}/>  
