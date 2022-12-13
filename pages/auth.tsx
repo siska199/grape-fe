@@ -8,7 +8,6 @@ type Props = {}
 
 const Auth : NextPage = (props: Props) => {
     const {data:session} = useSession()
-    console.log("data: ", session)
   return (
     <Page title={"auth | grape"}>
       <section className="flex w-full p-4">

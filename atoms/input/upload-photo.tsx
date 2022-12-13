@@ -38,7 +38,7 @@ const UploadPhoto = (props: Tprops) => {
           }
           <div>
             <p>Upload a profile picture resume. Max size 2MB</p>
-            <p>{imageName}</p>
+            <p className='text-[0.75rem] font-thin text-cd400'>{imageName}</p>
           </div>
         </div>
         <Button customeStyle={"bg-cd700"} name={"Browse"} onClick={handleUploadPhoto}/>

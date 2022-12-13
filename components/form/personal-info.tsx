@@ -3,13 +3,10 @@ import InputPhone from '@atoms/input/phone'
 import TextArea from '@atoms/input/text-area'
 import UploadPhoto from '@atoms/input/upload-photo'
 import ListSocialMedia from '@components/list/social-media'
-import { handleChangeField } from '@lib/redux/features/resumeSlice'
-import { useAppDispatch, useAppSelector } from '@lib/redux/store'
+import { useAppSelector } from '@lib/redux/store'
 import useOnChange from 'hooks/useOnChange'
-import React, { useState } from 'react'
 
 const FormPersonalInfo = (props : {}) => {
-  const dispatch = useAppDispatch()
   const form = useAppSelector(state=>state.resume.form.personalInfo) 
   const  { handleOnChange, handleOnChangeImage,handleOnChangePhone,handleRemoveImage} = useOnChange("personalInfo")
 
