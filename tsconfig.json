@@ -23,6 +23,7 @@
       "@styles/*" : ["styles/*"],
       "@layouts/*":["layouts/*"],
       "@lib/*" : ["lib/*"],
+      "@hook/*" : ["hook/*"],
 
     }
   },
