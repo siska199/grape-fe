@@ -10,7 +10,7 @@
 
 @layer base{
     body {
-        @apply overflow-x-hidden max-w-full min-h-screen bg-cd900 !text-cd300
+        @apply overflow-x-hidden max-w-full min-h-screen bg-cd900 text-cd300
     }
 }
 
@@ -33,12 +33,33 @@
     .close-button{
         @apply text-[1.5rem] absolute -top-2 -right-2 cursor-pointer
     }
-    .input{
+    .input,input[type="tel"]{
         @apply px-2 py-2 outline-none bg-cd800 p-1 text-sm
     }
     .label{
         @apply font-thin text-sm mb-2
     }
+    /***Custome style for react telephone input****/
+    input[type="tel"]{
+        @apply !w-full !border-none !bg-cd800 !rounded-none
+    }
+    div[role="button"]{
+        @apply !bg-cd800 !border-none !border-cd800
+    }
+    ul[role="listbox"]{
+        @apply !bg-cd800
+    }
+    li[role="option"]:hover{
+        @apply !bg-cd700
+    }
+    li[aria-selected="true"]{
+        @apply !bg-cd900  !border-cd700 border-[0.005rem]
+    }
+    
+    .react-tel-input .flag-dropdown{
+        border : none !important;
+    }
+
 
 }
 

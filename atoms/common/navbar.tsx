@@ -17,7 +17,6 @@ const Navbar = () => {
       notification : ()=>console.log("notifications"),
       profile : ()=>setToggleDropdown(!toggleDropdown)
     }
-    console.log(expandSearch)
   return (
     <nav className='sticky top-0 text-white bg-cd900  h-[4rem] px-2 md:px-4 max-w-[1500px] m-auto'>
       <div className=' flex justify-between items-center h-full  px-[1rem] md:px-[4rem] mx-auto'>

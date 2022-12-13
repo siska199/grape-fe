@@ -75,6 +75,9 @@ interface TResume {
     contactReferences : TContactReference[]
 }
 
+type TFileReader = string | ArrayBuffer | null
+type TDataInputCustome = {name:string,value:number|string}
+
 
 
 

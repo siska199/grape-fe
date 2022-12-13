@@ -10,4 +10,12 @@ export const convertToFieldName = (sentence:string)=>{
     }).join("")
 }
 
-console.log("result: ", convertToFieldName("SIsksa "))
+export const generateURLImage = (file:File, callback : (url: TFileReader)=>void)=>{
+    let url : TFileReader = ""
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onload = (e) =>{
+        url =  e.target ? e.target.result : ""
+        callback(url)
+    }
+}

@@ -32,7 +32,11 @@ export const initialState = {
     form : {
         personalInfo : {
             fullname : "",
-            image : "",
+            image : {
+                file : null,
+                url : "",
+                imageName : ""
+            },
             phone: "",
             email : "",
             aboutMe : "",
@@ -65,7 +69,11 @@ export const initialState = {
 interface TPayloadOnChange{
     type : string ,
     name : string,
-    value : string
+    value : string | {
+        file : File | null;
+        url : string | ArrayBuffer |null,
+        imageName : string
+    } | number
 }
 type TAddListDataForm = {
     parentName : string ,
@@ -87,6 +95,7 @@ const resumeSlice = createSlice({
          * Law : handle on change form
          */
         handleChangeField : (state,action:PayloadAction<TPayloadOnChange>)=>{
+            console.log("data changed: ", action.payload)
             state.form[action.payload.type] = {
                 ...state.form[action.payload.type],
                 [action.payload.name] : action.payload.value

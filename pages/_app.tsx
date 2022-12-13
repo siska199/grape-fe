@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 import client from '../lib/graphql/apolloClient'
 import {store, persistor} from '@lib/redux/store'
+import 'react-phone-input-2/lib/style.css'
 import '../styles/globals.css'
 
 const variants = {
