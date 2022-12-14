@@ -7,7 +7,7 @@ const Input = (props: TProps) => {
   return (
     <div className={`flex flex-col ${customeStyle} w-full `}>
         <label htmlFor={name} className='label'>{name.toUpperCase()}</label>
-        <input onChange={onChange} type={type} value={value} name={name} className={`input ${type=="checkbox" && "w-[1.5rem] h-[1.5rem]"}`} />
+        <input onChange={onChange} type={type} value={value} name={name} className={`input h-full ${type=="checkbox" && "w-[1.5rem] h-[1.5rem]"}`} />
     </div>  )
 }
 

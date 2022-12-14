@@ -6,3 +6,6 @@ https://dribbble.com/shots/19337773-User-profile-Untitled-UI
 
 Referense redux-persist:
 1. https://github.com/rt2zz/redux-persist
+
+Referensi flow login : 
+1. https://auth0.openai.com/u/login/identifier?state=hKFo2SBTMGZENWUtM182djVyVzYxU0d6MnNEbWZKMkNzWnQ0OKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDNTR1k5X2FxWmRNWjRkR3h5NlJ6bHpabUlNdUVqSlh0o2NpZNkgRFJpdnNubTJNdTQyVDNLT3BxZHR3QjNOWXZpSFl6d0Q
