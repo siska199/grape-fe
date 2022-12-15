@@ -3,11 +3,8 @@ import { handleChangeField } from '@lib/redux/features/resumeSlice'
 import { useAppDispatch } from '@lib/redux/store'
 import React from 'react'
 
-type TProps = {
-    typeForm : string;
-}
 
-const useOnChange = (typeForm:string ) => {
+const useOnChange = (typeForm:string) => {
    const dispatch = useAppDispatch()
    
    const handleOnChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
@@ -30,6 +27,8 @@ const useOnChange = (typeForm:string ) => {
   }
 
   const handleOnChangeImage = (e:React.ChangeEvent<HTMLInputElement>)=>{
+    e.stopPropagation()
+    e.preventDefault()
     const target = e.target
     if(target.files){
       const imageName = target.files[0]? target.files[0].name : ""

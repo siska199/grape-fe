@@ -11,7 +11,7 @@ type TProps = {
 
 const Modal = ({children, title, onClose, onSave}: TProps) => {
   return (
-    <article className='fixed top-0 left-0  bg-white/20 flex justify-center items-center w-full h-full'>
+    <article className='fixed z-[999] top-0 left-0  bg-white/20 flex justify-center items-center w-full h-full'>
         <section className='font-thin w-[40rem]  p-4 min-h-[20rem] border relative border-dashed bg-cd900 shadow-md shadow-cd800'>
             <IoMdCloseCircle onClick={onClose} className='close-button'/>
             <h1 className='text-center font-thin text-[1.5rem]'>{title}</h1>

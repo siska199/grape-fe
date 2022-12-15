@@ -25,7 +25,7 @@ const FormResume = (props: {}) => {
               currentStep != 1 && 
               <Button customeStyle='bg-pink-800 mr-4' name={"back"} onClick={()=>dispatch(handleBackStep())}/>
             }
-            <Button name={"next"} customeStyle={`bg-violet-800 mt-4 ml-auto`} onClick={()=>dispatch(handleNextStep())}/>
+            <Button name={"next"} customeStyle={`bg-violet-800 mt-4 ml-auto text-white`} onClick={()=>dispatch(handleNextStep())}/>
         </div>
       </div>
     </Page>

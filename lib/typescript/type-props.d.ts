@@ -6,4 +6,5 @@ export interface TInputProps<T>{
     customeStyle? : string;
     type : "text" | "password" | "checkbox" | "date" | "email" | "number"
 }
+export type TId = string
 

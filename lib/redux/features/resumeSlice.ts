@@ -49,7 +49,11 @@ export const initialState = {
         education : {
             institution : "",
             major : "",
-            logo : "",
+            logo : {
+                file : null,
+                url : "",
+                imageName : ""
+            },
             activities : []
         },
         skill : {
@@ -75,17 +79,17 @@ interface TPayloadOnChange{
         imageName : string
     } | number
 }
-type TAddListDataForm = {
+type TPayloadAddListDataForm = {
     parentName : string ,
 } & Pick<TPayloadOnChange,"type">
 
-type TEditListDataForm = {
+type TPayloadEditListDataForm = {
     id : string,
-} & TAddListDataForm
+} & TPayloadAddListDataForm
 
-type TDeleteListDataForm = TEditListDataForm
+type TPayloadDeleteListDataForm = TPayloadEditListDataForm
 
-type TResetDataForm =Pick<TAddListDataForm,"parentName"|"type">
+type TPayloadResetDataForm =Pick<TPayloadAddListDataForm,"parentName"|"type">
 
 const resumeSlice = createSlice({
     name:"resume",
@@ -104,7 +108,7 @@ const resumeSlice = createSlice({
          * 
          * Law : handle add, edit, delete data to list
          */
-        handleAddListDataForm : (state, action:PayloadAction<TAddListDataForm>)=>{
+        handleAddListDataForm : (state, action:PayloadAction<TPayloadAddListDataForm>)=>{
             const newData = {
                 id : uuid(),
                 ...state.form[action.payload.type]
@@ -117,19 +121,19 @@ const resumeSlice = createSlice({
             ]
             state.form[action.payload.type] = initialState.form[action.payload.type]
         },
-        handleEditListData : (state,action:PayloadAction<TEditListDataForm>)=>{
+        handleEditListData : (state,action:PayloadAction<TPayloadEditListDataForm>)=>{
             const keyParent = state.form[action.payload.parentName]
             const dataEdited = keyParent[`${action.payload.type}s`].filter(data=>data.id==action.payload.id)[0]
             state.form[action.payload.type] = dataEdited
         },
-        handleDeleteListData : (state,action:PayloadAction<TDeleteListDataForm>)=>{
+        handleDeleteListData : (state,action:PayloadAction<TPayloadDeleteListDataForm>)=>{
             const keyParent = state.form[action.payload.parentName]
             keyParent[`${action.payload.type}s`] = keyParent[`${action.payload.type}s`].filter(data=>data.id!=action.payload.id) 
         },
         /**
          * Law : Reset form data
          */
-        handleResetFormData : (state,action:PayloadAction<TResetDataForm>)=>{
+        handleResetFormData : (state,action:PayloadAction<TPayloadResetDataForm>)=>{
             state.form[action.payload.type] = initialState.form[action.payload.type]
         },
         /**

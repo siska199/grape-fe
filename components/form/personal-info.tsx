@@ -13,7 +13,7 @@ const FormPersonalInfo = (props : {}) => {
   return (
     <div className='container-form'>
         <Input onChange={handleOnChange} type="text"  name={"fullname"} value={form.fullname} />
-        <UploadPhoto onRemove={handleRemoveImage} onChange={handleOnChangeImage}  name={"profile picture resume"} value={form.image} />
+        <UploadPhoto onRemove={handleRemoveImage} onChange={handleOnChangeImage}  name={"image"} value={form.image} />
         <div className='grid gap-5 grid-cols-2 w-full'>
             <InputPhone onChange={handleOnChangePhone}  name={"phone"} value={form.phone}/>
             <Input onChange={handleOnChange} type="email" name={"email"} value={form.email} />
