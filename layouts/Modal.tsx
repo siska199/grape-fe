@@ -15,9 +15,9 @@ const Modal = ({children, title, onClose, onSave}: TProps) => {
         <section className='font-thin w-[40rem]  p-4 min-h-[20rem] border relative border-dashed bg-cd900 shadow-md shadow-cd800'>
             <IoMdCloseCircle onClick={onClose} className='close-button'/>
             <h1 className='text-center font-thin text-[1.5rem]'>{title}</h1>
-            <form action="" className='flex flex-col gap-4 px-4 max-h-[30rem] overflow-x-hidden overflow-y-scroll '>
+            <section  className='flex flex-col gap-4 px-4 max-h-[30rem] overflow-x-hidden overflow-y-scroll '>
               {children}
-            </form>
+            </section>
             <div className=' sticky bottom-0 bg-cd900 pt-4 flex'>
               <Button name={"save"} customeStyle='bg-cd700 py-2 w-[7rem] ml-auto' onClick={onSave}/>
             </div>

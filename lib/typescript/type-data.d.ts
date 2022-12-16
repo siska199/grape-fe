@@ -14,6 +14,11 @@ interface TPersonalInfo{
     address : string;
 }
 
+interface TActivity{
+    id : string;
+    name : string;
+}
+
 interface TEducation{
     institution : string;
     major : string;

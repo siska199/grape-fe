@@ -10,7 +10,7 @@ type Tprops = Omit<TInputProps<HTMLInputElement>,"type" | "value"> &{
     url : string | ArrayBuffer | null;
     imageName : string
   }
-  onRemove : ()=>void
+  onRemove : (name:string)=>void
 }
 
 const UploadPhoto = (props: Tprops) => {
@@ -30,7 +30,7 @@ const UploadPhoto = (props: Tprops) => {
             url ? (
               <div className='relative'>
                 <img src={url as string} className="w-[4rem] h-[4rem] cursor-zoom-in"/>
-                <IoMdCloseCircle onClick={onRemove} className='absolute -top-[0.6rem] -right-[0.6rem] border-1 rounded-full cursor-pointer border-cd400'/>
+                <IoMdCloseCircle onClick={()=>onRemove(name)} className='absolute -top-[0.6rem] -right-[0.6rem] border-1 rounded-full cursor-pointer border-cd400'/>
               </div>
             ):(
               <FcAddImage className='text-[4rem]'/>
@@ -43,7 +43,7 @@ const UploadPhoto = (props: Tprops) => {
         </div>
         <Button customeStyle={"bg-cd700"} name={"Browse"} onClick={handleUploadPhoto}/>
       </div>
-      <input  name={"image"} onChange={onChange} ref={uploadRef} hidden type="file" accept="image/*"/>
+      <input  name={name} onChange={onChange} ref={uploadRef} hidden type="file" accept="image/*"/>
     </div>
   )
 }

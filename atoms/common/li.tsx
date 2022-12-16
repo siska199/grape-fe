@@ -1,7 +1,6 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 import { TId } from '@lib/typescript/type-props';
+import { motion } from 'framer-motion';
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 
 type Props = {
     name : string;

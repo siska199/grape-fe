@@ -46,6 +46,10 @@ export const initialState = {
             name : "",
             link : "",
         },
+        activity : {
+            name : "",
+            id : ""
+        },
         education : {
             institution : "",
             major : "",
