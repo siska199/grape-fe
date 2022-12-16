@@ -43,7 +43,7 @@ const UploadPhoto = (props: Tprops) => {
         </div>
         <Button customeStyle={"bg-cd700"} name={"Browse"} onClick={handleUploadPhoto}/>
       </div>
-      <input  name={name} onChange={onChange} ref={uploadRef} hidden type="file" accept="image/*"/>
+      <input className="input-resume"  name={name} onChange={onChange} ref={uploadRef} hidden type="file" accept="image/*"/>
     </div>
   )
 }

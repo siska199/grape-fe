@@ -5,12 +5,15 @@ import useOnCRUD from 'hooks/useOnCRUD'
 import { useState } from 'react'
 import { BsPlusSquare } from "react-icons/bs"
 
-type Props = {}
+type TProps = {
+    parentName : string;
+}
 
-const ListActivity = ({}: Props) => {
+const ListActivity = (props: TProps) => {
+    const {parentName} = props
     const [addActivity, setAddActivity] = useState(false)
     const activities = useAppSelector(state=>state.resume.form.education.activities)
-    const {handleDeleteData,handleEditData} = useOnCRUD({type:"activity",parentName:"education"})
+    const {handleDeleteData,handleEditData} = useOnCRUD({type:"activity",parentName:parentName})
 
     return(
         <div>

@@ -19,7 +19,7 @@ const AddEducation = (props: {}) => {
                 <Input type="text" onChange={handleOnChange} name={"institution"} value={form.institution} />
                 <Input type="text" onChange={handleOnChange} name={"major"} value={form.major} />
                 <UploadPhoto onRemove={handleRemoveImage} onChange={handleOnChangeImage} name={"logo"} value={form.logo}/>
-                <ListActivity/>
+                <ListActivity parentName="education"/>
             </>
     </Modal>
   )

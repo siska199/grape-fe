@@ -19,3 +19,10 @@ export const generateURLImage = (file:File, callback : (url: TFileReader)=>void)
         callback(url)
     }
 }
+
+export const validationInput = {
+    text : {
+        pattern : "",
+        
+    }
+}

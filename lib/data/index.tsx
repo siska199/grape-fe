@@ -179,5 +179,14 @@ export const skillLevel = [
   "Advance"
 ]
 
+export const elementInsideResumeFrom = {
+  personalInfo : {
+    nameClass : "form-personal-info",
+    input : true,
+    textarea : true,
+    listData : true,
+    image : true
+  }
+}
 
 

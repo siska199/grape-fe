@@ -27,7 +27,10 @@ const AddSocialMedia = (props: TProps) => {
     }}>
           <Input onChange={handleOnChange} type="text" name={"name"} value={form.name} customeStyle={"w-[40%]"}/>
           <Input onChange={handleOnChange} type="text" name={"link"} value={form.link} customeStyle={"w-[40%]"}/>   
-          <Button customeStyle={"bg-cd700 mt-auto h-[2.2rem]"} name={"add"} onClick={()=>handleAddData()}/>  
+          <Button customeStyle={"bg-cd700 mt-auto h-[2.2rem]"} name={"add"} onClick={()=>{
+            onClose(false)
+            handleAddData()
+          }}/>  
     </AddField>
 
   )

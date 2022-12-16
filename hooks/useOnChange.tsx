@@ -47,7 +47,7 @@ const useOnChange = (typeForm:string) => {
         generateURLImage(target.files[0], callback)
     }
   }
-  const handleRemoveImage = (name)=>{
+  const handleRemoveImage = (name:string)=>{
     const data = {
       type : typeForm,
       value : {

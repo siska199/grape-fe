@@ -11,7 +11,7 @@ const FormPersonalInfo = (props : {}) => {
   const  { handleOnChange, handleOnChangeImage,handleOnChangePhone,handleRemoveImage} = useOnChange("personalInfo")
 
   return (
-    <div className='container-form'>
+    <section className='container-form form-personal-info'>
         <Input onChange={handleOnChange} type="text"  name={"fullname"} value={form.fullname} />
         <UploadPhoto onRemove={handleRemoveImage} onChange={handleOnChangeImage}  name={"image"} value={form.image} />
         <div className='grid gap-5 grid-cols-2 w-full'>
@@ -20,7 +20,7 @@ const FormPersonalInfo = (props : {}) => {
         </div>
         <TextArea onChange={handleOnChange} name={"about me"} value={form.aboutMe} />
         <ListSocialMedia socialMedias={form.socialMedias}/>
-    </div>
+    </section>
   )
 }
 

@@ -1,3 +1,4 @@
+import { elementInsideResumeFrom } from './../../data/index';
 import {createSlice, current, PayloadAction} from "@reduxjs/toolkit"
 import { uuid } from 'uuidv4';
 
@@ -144,17 +145,49 @@ const resumeSlice = createSlice({
          * Law : if user click next so we will hit api save with status undone if  currentStepFormResume < 5
          */
         handleNextStep : (state,action:PayloadAction<undefined>)=>{
+            const currentStep = current(state).currentStepFormResume
+            /**Validate input **/
+            let correctionFormField = {
+                nameClass:'',
+                input : true,
+                textarea : true,
+                listData : true,
+                image : true
+            }
+            switch(currentStep){
+                case 1:
+                    correctionFormField = elementInsideResumeFrom.personalInfo
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    break;
+            }
+            let emptyValueInputs : NodeListOf<Element> | []=[]
+            let elementTextArea : HTMLTextAreaElement | null =null
+            let elementLi : NodeListOf<Element> | []= []
+            if(correctionFormField.input) emptyValueInputs = document.querySelectorAll(".form-personal-info .input-resume.input[value=''], .form-personal-info input[value='+62'][type='tel']")
+            if(elementTextArea) elementTextArea = document.querySelector<HTMLTextAreaElement>(".form-personal-info textarea") 
+            if(elementLi) elementLi = document.querySelectorAll(".form-personal-info ul.list-data li")
+
+
+
             state.stepsFormResume = current(state).stepsFormResume.map(data=>{
-                if(current(state).currentStepFormResume==data.step){
+                if(currentStep==data.step){
                     return {
                         ...data,
                         done:true
                     }
                 }
                 return data
-
             })
             state.currentStepFormResume = current(state).currentStepFormResume +1
+
+
         },
         /**
          * Law : if user beack currentStepForResume will minus 1 
