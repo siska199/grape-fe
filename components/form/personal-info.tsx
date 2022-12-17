@@ -4,7 +4,7 @@ import TextArea from '@atoms/input/text-area'
 import UploadPhoto from '@atoms/input/upload-photo'
 import ListSocialMedia from '@components/list/social-media'
 import { useAppSelector } from '@lib/redux/store'
-import useOnChange from 'hooks/useOnChange'
+import useOnChange from 'hooks/form/useOnChange'
 
 const FormPersonalInfo = (props : {}) => {
   const form = useAppSelector(state=>state.resume.form.personalInfo) 

@@ -1,7 +1,7 @@
 import Label from '@atoms/common/lebel-with-button'
 import Li from '@atoms/common/li'
 import AddSocialMedia from '@atoms/form-add-data/social-media'
-import useOnCRUD from 'hooks/useOnCRUD'
+import useOnCRUD from 'hooks/form/useOnCRUD'
 import { useState } from 'react'
 
 type TProps = {

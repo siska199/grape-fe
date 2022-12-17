@@ -4,7 +4,7 @@ import ListActivity from '@components/list/activity'
 import Modal from '@layouts/modal'
 import { handleModalAddEducation } from '@lib/redux/features/resumeSlice'
 import { useAppDispatch, useAppSelector } from '@lib/redux/store'
-import useOnChange from 'hooks/useOnChange'
+import useOnChange from 'hooks/form/useOnChange'
 
 
 const AddEducation = (props: {}) => {

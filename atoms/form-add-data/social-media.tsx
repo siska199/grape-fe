@@ -2,8 +2,8 @@ import Button from '@atoms/common/button'
 import Input from '@atoms/input/input'
 import AddField from '@layouts/add-field'
 import { useAppSelector } from '@lib/redux/store'
-import useOnChange from 'hooks/useOnChange'
-import useOnCRUD from 'hooks/useOnCRUD'
+import useOnCRUD from 'hooks/form/useOnCRUD'
+import useOnChange from 'hooks/form/useOnChange'
 import React from 'react'
 
 type TProps = {
