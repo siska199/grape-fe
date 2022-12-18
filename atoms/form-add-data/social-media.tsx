@@ -13,7 +13,9 @@ type TProps = {
 const AddSocialMedia = (props: TProps) => {
   const {onClose}= props
   const form = useAppSelector(state=>state.resume.form.socialMedia)
-  const {handleOnChange} = useOnChange("socialMedia")
+  const {handleOnChange} = useOnChange({
+    formName : "socialMedia"
+  })
   const {handleAddData, handleResetForm} = useOnCRUD({
     parentName : "personalInfo",
     type : "socialMedia",
@@ -21,7 +23,7 @@ const AddSocialMedia = (props: TProps) => {
 
 
   return (
-    <AddField onClose={()=>{
+    <AddField formClass='form-social-media' onClose={()=>{
       onClose(false)
       handleResetForm()
     }}>

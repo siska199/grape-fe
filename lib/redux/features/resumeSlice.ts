@@ -1,3 +1,4 @@
+import { validationForm } from './../../helper/index';
 import { elementInsideResumeFrom } from './../../data/index';
 import {createSlice, current, PayloadAction} from "@reduxjs/toolkit"
 import { uuid } from 'uuidv4';
@@ -34,7 +35,7 @@ export const initialState = {
         personalInfo : {
             fullname : "",
             image : {
-                file : null,
+                fileExist : "false",
                 url : "",
                 imageName : ""
             },
@@ -55,7 +56,7 @@ export const initialState = {
             institution : "",
             major : "",
             logo : {
-                file : null,
+                fileExist : "false",
                 url : "",
                 imageName : ""
             },
@@ -79,7 +80,7 @@ interface TPayloadOnChange{
     type : string ,
     name : string,
     value : string | {
-        file : File | null;
+        fileExist : "false" | "true";
         url : string | ArrayBuffer |null,
         imageName : string
     } | number
@@ -146,17 +147,12 @@ const resumeSlice = createSlice({
          */
         handleNextStep : (state,action:PayloadAction<undefined>)=>{
             const currentStep = current(state).currentStepFormResume
-            /**Validate input **/
-            let correctionFormField = {
-                nameClass:'',
-                input : true,
-                textarea : true,
-                listData : true,
-                image : true
-            }
+
+            let allowNextStep = false
+
             switch(currentStep){
                 case 1:
-                    correctionFormField = elementInsideResumeFrom.personalInfo
+                    allowNextStep =  validationForm(elementInsideResumeFrom.personalInfo)
                     break;
                 case 2:
                     break;
@@ -167,27 +163,20 @@ const resumeSlice = createSlice({
                 default:
                     break;
             }
-            let emptyValueInputs : NodeListOf<Element> | []=[]
-            let elementTextArea : HTMLTextAreaElement | null =null
-            let elementLi : NodeListOf<Element> | []= []
-            if(correctionFormField.input) emptyValueInputs = document.querySelectorAll(".form-personal-info .input-resume.input[value=''], .form-personal-info input[value='+62'][type='tel']")
-            if(elementTextArea) elementTextArea = document.querySelector<HTMLTextAreaElement>(".form-personal-info textarea") 
-            if(elementLi) elementLi = document.querySelectorAll(".form-personal-info ul.list-data li")
-
-
-
-            state.stepsFormResume = current(state).stepsFormResume.map(data=>{
-                if(currentStep==data.step){
-                    return {
-                        ...data,
-                        done:true
+            if(allowNextStep){
+                state.stepsFormResume = current(state).stepsFormResume.map(data=>{
+                    if(currentStep==data.step){
+                        return {
+                            ...data,
+                            done:true
+                        }
                     }
-                }
-                return data
-            })
-            state.currentStepFormResume = current(state).currentStepFormResume +1
-
-
+                    return data
+                })
+                state.currentStepFormResume = currentStep +1
+            }else{
+                alert("FORBIDDEN TO NEXT STEP")
+            }
         },
         /**
          * Law : if user beack currentStepForResume will minus 1 

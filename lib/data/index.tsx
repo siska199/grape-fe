@@ -185,7 +185,7 @@ export const elementInsideResumeFrom = {
     input : true,
     textarea : true,
     listData : true,
-    image : true
+    uploadFile : true
   }
 }
 

@@ -10,7 +10,7 @@ const AddActivity = (props:{}) => {
   }
 
   return (
-    <AddField onClose={()=>console.log("")} direction="horizontal">
+    <AddField formClass='form-activity' onClose={()=>console.log("")} direction="horizontal">
         <Input type={"text"} onChange={handleOnChange} name={"activity"} value={""}/>
         <Button name={"Add"} onClick={()=>console.log("")} customeStyle={"bg-cd700 h-[2.3rem] mt-auto"}/>
     </AddField>

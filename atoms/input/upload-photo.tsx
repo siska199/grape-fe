@@ -1,3 +1,4 @@
+import InputFile from '@atoms/common/InputFile';
 import Button from '@atoms/common/button'
 import { TInputProps } from '@lib/typescript/type-props'
 import { useRef } from 'react'
@@ -6,7 +7,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 
 type Tprops = Omit<TInputProps<HTMLInputElement>,"type" | "value"> &{
   value : {
-    file: File | null;
+    fileExist: string;
     url : string | ArrayBuffer | null;
     imageName : string
   }
@@ -14,12 +15,12 @@ type Tprops = Omit<TInputProps<HTMLInputElement>,"type" | "value"> &{
 }
 
 const UploadPhoto = (props: Tprops) => {
-  const {name, value : {url, imageName}, onChange, onRemove} = props
+  const {name, value : {url, imageName,fileExist}, onChange, onRemove} = props
   const uploadRef = useRef<HTMLInputElement | null>(null)
   const handleUploadPhoto = ()=>{
     uploadRef?.current?.click()
   }
-
+  console.log("file exist: ",fileExist)
 
   return (
     <div className={`w-full flex flex-col`}>
@@ -43,7 +44,7 @@ const UploadPhoto = (props: Tprops) => {
         </div>
         <Button customeStyle={"bg-cd700"} name={"Browse"} onClick={handleUploadPhoto}/>
       </div>
-      <input className="input-resume"  name={name} onChange={onChange} ref={uploadRef} hidden type="file" accept="image/*"/>
+      <InputFile hidden className="input-resume upload-file" fileExist={fileExist} name={name} onChange={onChange} ref={uploadRef} type="file" accept="image/*"/>
     </div>
   )
 }

@@ -8,7 +8,10 @@ import useOnChange from 'hooks/form/useOnChange'
 
 const FormPersonalInfo = (props : {}) => {
   const form = useAppSelector(state=>state.resume.form.personalInfo) 
-  const  { handleOnChange, handleOnChangeImage,handleOnChangePhone,handleRemoveImage} = useOnChange("personalInfo")
+  const  { handleOnChange, handleOnChangeImage,handleOnChangePhone,handleRemoveImage} = useOnChange({
+    formName: "personalInfo",
+    formClass : "form-personal-info"
+  })
 
   return (
     <section className='container-form form-personal-info'>
