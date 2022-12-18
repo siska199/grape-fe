@@ -189,6 +189,7 @@ const resumeSlice = createSlice({
          */
         handleModalAddEducation : (state, action:PayloadAction<boolean>)=>{
             state.modalAddEducation = action.payload
+            state.form.education = initialState.form.education
         },
         handleModalAddExperiance : (state, action:PayloadAction<boolean>)=>{
             state.modalAddExperiance = action.payload

@@ -11,7 +11,10 @@ const AddEducation = (props: {}) => {
   const dispatch = useAppDispatch()
   const form = useAppSelector(state=>state.resume.form.education)
   console.log("form education: ", form)
-  const  { handleOnChange, handleOnChangeImage,handleRemoveImage} = useOnChange("education")
+  const  { handleOnChange, handleOnChangeImage,handleRemoveImage} = useOnChange({
+    formName:"education",
+    formClass:"form-education"
+  })
 
   return (
     <Modal title="Add Education" onSave={()=>console.log("save")} onClose={()=>dispatch(handleModalAddEducation(false))}>
