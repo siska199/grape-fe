@@ -57,3 +57,9 @@ export const validationForm = (dataForm:TDataValidationForm ) : boolean=>{
     
     return isValid
 }
+
+export const converToPluralClass = (className:string):string=>{
+    const result = className.charAt(className.length-1)=="y"?`${className.slice(0,className.length-1)}ies`:`${className}s`
+    return result
+}
+
