@@ -12,7 +12,7 @@ type Props = {
 const AddField = (props: Props) => {
     const {children, direction, onClose,formClass} = props
   return (
-    <div className={` container-dashed relative ${formClass}`} style={{flexDirection:direction=="horizontal"?"row":"column"}}>
+    <div className={` container-dashed relative ${formClass}`}>
         <AiOutlineCloseCircle onClick={onClose} className='-top-2 absolute -right-2 font-thin cursor-pointer'/>
         <div className='px-4 flex gap-4'>
             {children}

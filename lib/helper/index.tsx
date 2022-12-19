@@ -38,8 +38,7 @@ export const validationForm = (dataForm:TDataValidationForm ) : boolean=>{
     console.log(dataForm)
     const formClass = dataForm.nameClass
     const elementsInputEmpty = document.querySelectorAll(`.${formClass} input[value=''].input-resume, .${formClass} input[value='+62'][type='tel'], .${formClass} input[value=''][type='tel'], .${formClass} input[fileexist='false']`)
-    console.log("element file", document.querySelectorAll(`.${formClass} input[fileexist='false']`))
-    const elementsTextArea : NodeListOf<HTMLTextAreaElement> = document.querySelectorAll(`.${formClass} textarea`) 
+    const elementsTextArea: NodeListOf<HTMLTextAreaElement> = document.querySelectorAll(`.${formClass} textarea`)
     const elementsLi = document.querySelectorAll(`.${formClass} ul.list-data li`)
     let isInputsAllow = true;
     let isTextAreaAllow = true;
@@ -48,12 +47,8 @@ export const validationForm = (dataForm:TDataValidationForm ) : boolean=>{
     if(dataForm.input) isInputsAllow = elementsInputEmpty.length==0?true:false
     if(dataForm.textarea) isTextAreaAllow = Array.from(elementsTextArea).filter(elm=>elm.value=='').length==0?true:false
     if(dataForm.listData) isLisAlllow = elementsLi.length>0?true:false
-    
-    console.log("input: ", isInputsAllow)
-    console.log("textare:", isTextAreaAllow)
-    console.log("list data: ", isLisAlllow)
+
     const isValid = (isInputsAllow&&isTextAreaAllow&&isLisAlllow) ? true:false
-    console.log("is valid: ", isValid)
     
     return isValid
 }
@@ -62,4 +57,3 @@ export const convertToPluralClass = (className:string):string=>{
     const result = className.charAt(className.length-1)=="y"?`${className.slice(0,className.length-1)}ies`:`${className}s`
     return result
 }
-

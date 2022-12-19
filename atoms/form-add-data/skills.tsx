@@ -12,7 +12,7 @@ const AddSkills = (props: {}) => {
   }
 
   return (
-    <AddField onClose={()=>console.log("")}>
+    <AddField onClose={()=>console.log("")} formClass="form-skills">
       <div className='w-full flex flex-col gap-2'>
         <div className='w-full grid grid-cols-2 gap-4'>
             <Input onChange={handleOnChange} type="text" name={"name"} value={""} customeStyle={"w-full"}/>

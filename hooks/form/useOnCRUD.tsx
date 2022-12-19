@@ -8,25 +8,26 @@ type Props = {
 }
 
 const useOnCRUD = (props: Props) => {
+    const {parentName,type} = props
     const dispatch = useAppDispatch()
     const handleAddData = ()=>{
         dispatch(handleAddListDataForm({
-          parentName : "personalInfo",
-          type : "socialMedia",
+          parentName,
+          type
         }))
       }
     const handleEditData = (id:string)=>{
         dispatch(handleEditListData({
-            type : "socialMedia",
-            parentName:"personalInfo",
+            type,
+            parentName,
             id 
         }))
     }
 
     const handleDeleteData = (id:TId)=>{
         dispatch(handleDeleteListData({
-            type : "socialMedia",
-            parentName:"personalInfo",
+            type,
+            parentName,
             id 
         }))
     }
@@ -34,8 +35,8 @@ const useOnCRUD = (props: Props) => {
     const handleResetForm = ()=>{
         dispatch(
             handleResetFormData({
-                type : "socialMedia",
-                parentName:"personalInfo",
+                type ,
+                parentName,
             })
         )
     }

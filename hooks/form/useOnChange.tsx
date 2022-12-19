@@ -19,6 +19,7 @@ const useOnChange = (props:TProps) => {
       value : e.target.value,
       name : e.target.name
     }
+    console.log("data onchnage: ", data)
     dispatch(handleChangeField(data))
   }
 

@@ -1,5 +1,5 @@
-import { validationForm } from './../../helper/index';
-import { elementInsideResumeFrom } from './../../data/index';
+import { validationForm, convertToPluralClass } from '@lib/helper';
+import { elementInsideResumeFrom } from '@lib/data';
 import {createSlice, current, PayloadAction} from "@reduxjs/toolkit"
 import { uuid } from 'uuidv4';
 
@@ -116,25 +116,28 @@ const resumeSlice = createSlice({
          */
         handleAddListDataForm : (state, action:PayloadAction<TPayloadAddListDataForm>)=>{
             const newData = {
+                ...state.form[action.payload.type],
                 id : uuid(),
-                ...state.form[action.payload.type]
             }
+            console.log("new data: ", action.payload);
             const keyParent = state.form[action.payload.parentName]
-            keyParent[`${action.payload.type}s`]= [
-                ...keyParent[`${action.payload.type}s`],
+            const fieldName = convertToPluralClass(action.payload.type)
+            keyParent[fieldName]= [
+                ...keyParent[fieldName],
                 newData
-                
             ]
             state.form[action.payload.type] = initialState.form[action.payload.type]
         },
         handleEditListData : (state,action:PayloadAction<TPayloadEditListDataForm>)=>{
+            const fieldName = convertToPluralClass(action.payload.type)
             const keyParent = state.form[action.payload.parentName]
-            const dataEdited = keyParent[`${action.payload.type}s`].filter(data=>data.id==action.payload.id)[0]
+            const dataEdited = keyParent[fieldName].filter(data=>data.id==action.payload.id)[0]
             state.form[action.payload.type] = dataEdited
         },
         handleDeleteListData : (state,action:PayloadAction<TPayloadDeleteListDataForm>)=>{
+            const fieldName = convertToPluralClass(action.payload.type)
             const keyParent = state.form[action.payload.parentName]
-            keyParent[`${action.payload.type}s`] = keyParent[`${action.payload.type}s`].filter(data=>data.id!=action.payload.id) 
+            keyParent[fieldName] = keyParent[fieldName].filter(data=>data.id!=action.payload.id) 
         },
         /**
          * Law : Reset form data
