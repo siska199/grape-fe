@@ -4,9 +4,11 @@ import {createSlice, current, PayloadAction} from "@reduxjs/toolkit"
 import { uuid } from 'uuidv4';
 
 export const initialState = {
-    modalAddEducation : false,
-    modalAddExperiance : false,
-    modalAddProject : false,
+    modalAdd : {
+        education : false,
+        experiance : false,
+        project : false
+    },
     currentStepFormResume : 1,
     stepsFormResume : [
         {
@@ -96,6 +98,11 @@ type TPayloadEditListDataForm = {
 type TPayloadDeleteListDataForm = TPayloadEditListDataForm
 
 type TPayloadResetDataForm =Pick<TPayloadAddListDataForm,"parentName"|"type">
+
+type TPayloadModalForm = {
+    type : string;
+    state : boolean
+}
 
 const resumeSlice = createSlice({
     name:"resume",
@@ -190,17 +197,13 @@ const resumeSlice = createSlice({
         /**
          * Handle modal
          */
-        handleModalAddEducation : (state, action:PayloadAction<boolean>)=>{
-            state.modalAddEducation = action.payload
-            state.form.education = initialState.form.education
+        handleModalForm : (state, action:PayloadAction<TPayloadModalForm>)=>{
+            state.modalAdd[action.payload.type] = action.payload.state
+            const html = document.querySelector("html")
+            html?.classList.toggle("overflow-y-hidden")
         },
-        handleModalAddExperiance : (state, action:PayloadAction<boolean>)=>{
-            state.modalAddExperiance = action.payload
-        },
-        handleModalAddProject : (state, action:PayloadAction<boolean>)=>{
-            state.modalAddProject = action.payload
-        }
+
     }
 })
-export const { handleResetFormData,handleChangeField, handleEditListData,  handleDeleteListData ,handleAddListDataForm, handleBackStep,handleNextStep, handleModalAddEducation, handleModalAddProject, handleModalAddExperiance} = resumeSlice.actions
+export const { handleResetFormData,handleChangeField, handleEditListData,  handleDeleteListData ,handleAddListDataForm, handleBackStep,handleNextStep, handleModalForm} = resumeSlice.actions
 export default resumeSlice.reducer
